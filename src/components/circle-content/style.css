@@ -1,0 +1,148 @@
+.mut_content_container {
+
+}
+
+.mut_content_acm {
+  height: 75%;
+}
+
+.mut_content_center {
+  display: flex;
+  flex-direction: row;
+}
+
+.mut_content_col {
+  width: 50%;
+  height: 100%;
+}
+
+.mut_line {
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.mut_content_acm .mut_line {
+  width: 32px;
+  height: 100%;
+  margin: 0 16px;
+}
+
+.mut_barcode {
+  text-align: right;
+  font-family: 'Libre Barcode 39 Extended', cursive;
+}
+
+.mut_text {
+  font-family: 'Special Elite', cursive;
+  font-size: 18px;
+}
+
+.mut_text h4,
+.mut_text h5,
+.mut_text h6 {
+  text-align: right;
+  margin:0;
+}
+
+.mut_text h4 {
+  font-size: 48px;
+}
+
+.mut_text h5 {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.mut_text h6 {
+  padding: 0 0 16px 0;
+  border-bottom: 8px solid;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.mut_image {
+  width: 100%;
+  margin: 16px 0
+}
+
+.mut_paragraph {
+
+}
+
+.mut_spheres {
+  position: absolute;
+  bottom:0;
+  left:0;
+  transform: translate(-50%, 25%);
+  z-index: 98;
+}
+
+.mut_spheres div {
+  position: absolute;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 50%;
+}
+
+.mut_sphere_1 {
+  width: 25%;
+  height: 25%;
+  top: 37.5%;
+  left: 37.5%;
+  z-index: 500
+}
+
+.mut_sphere_2 {
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  z-index: 499;
+
+}
+
+.mut_sphere_3 {
+  width: 75%;
+  height: 75%;
+  top: 12.5%;
+  left: 12.5%;
+  z-index: 498;
+}
+
+.mut_sphere_4 {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 497;
+}
+
+.mut_title_sphere {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  z-index: 100;
+}
+
+.mut_title_sphere h4,
+.mut_title_sphere h5,
+.mut_title_sphere h6 {
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+.mut_title_sphere h4 {
+  font-size: 48px;
+}
+
+.mut_title_sphere h5 {
+  font-size: 20px;
+}
+
+.mut_title_sphere h6 {
+  font-size: 18px;
+  font-weight: 300;
+}

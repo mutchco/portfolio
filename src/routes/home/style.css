@@ -1,0 +1,22 @@
+.mut_svg_container {
+	width:100%;
+	height: calc(100% - 159px);
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+	/* overflow-y: scroll; */
+	margin: 175px 0 0 0;
+}
+
+.mut_svg_container::-webkit-scrollbar {
+    width: 8	px;
+}
+
+.mut_svg_container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.mut_svg_container::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}

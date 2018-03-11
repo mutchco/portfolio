@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended|Source+Code+Pro:700|Special+Elite');
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #f7f1e3;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-weight: 400;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	transition: all 0.2s ease-in;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#app {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+
+.mut_acm {
+	color: #778beb;
+}
+
+.mut_gps {
+	color: #cf6a87;
+}
+
+.mut_pay {
+	color: #63cdda;
+}
+
+.mut_web {
+	color: #f3a683;
+}
+
+.mut_abo {
+	color: #786fa6;
+}

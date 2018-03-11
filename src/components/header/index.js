@@ -1,0 +1,44 @@
+import { h, Component } from 'preact';
+import { Link } from 'preact-router/match';
+import style from './style';
+
+export default class Header extends Component {
+
+	constructor() {
+		super();
+
+		this.state = {
+			stateLight: true,
+			stateClose: true
+		};
+
+		this.setLight = this.setLight.bind(this);
+		this.setClose = this.setClose.bind(this);
+	}
+
+	setLight(e) {
+		console.log('setLight', e);
+		this.setState({ stateLight: e });
+	}
+
+	setClose(e) {
+		console.log('setClose', e);
+		this.setState({ stateClose: !e })
+	}
+
+	render({ }, { stateLight, stateClose }) {
+
+		let styleClass = style.mut_header + (stateLight === true ? (' ' + style.mut_light) : '');
+			styleClass = styleClass + (stateClose === true ? (' ' + style.mut_close_show) : '');
+
+		return (
+			<header class={styleClass}>
+        <svg  class={style.mut_close} viewBox="0 0 24 24" ref={s => this.closeButton = s} id='mut_close_button'>
+          <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+        </svg>
+				<h1>Tyler<br />Mutch</h1>
+				<h2>node.js/Web/Android/.NET/AWS</h2>
+			</header>
+		);
+	}
+}

@@ -1,0 +1,18 @@
+.mut_acm_sphere {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 25%);
+}
+
+.mut_acm_line {
+  position: absolute;
+  top: 2%;
+  left: 35%;
+}
+
+.mut_acm_bubble {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}

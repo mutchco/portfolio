@@ -13,14 +13,14 @@
 	font-weight: 700;
 	font-family: 'Source Code Pro', monospace;
 	margin: 0 32px 8px 0;
-	color: #f7f1e3;
+	color: #84817a;
 }
 
 .mut_header h2 {
 	opacity: 0.4;
 	margin: 0;
 	font-size: 18px;
-	color: #f7f1e3;
+	color: #84817a;
 	font-weight: 700;
 	font-family: 'Source Code Pro', monospace;
 }
@@ -34,7 +34,7 @@
 	cursor: pointer;
 	transform: scale(0);
 	transition: transform 0.26s ese-out;
-	fill:#f7f1e3;
+	fill: #84817a;
 }
 
 .mut_close:hover {

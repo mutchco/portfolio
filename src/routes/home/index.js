@@ -10,33 +10,6 @@ import Bubble from '../../components/bubble';
 import Line from  '../../components/line';
 import Sphere from '../../components/sphere';
 
-const colors = {
-	blue: {
-		main: '#778beb',
-		accent: '#f7d794',
-		light: true
-	},
-	green: {
-		main: '#63cdda',
-		accent: '#778beb',
-		light: true
-	},
-	yellow: {
-		main: '#f7d794',
-		accent: '#63cdda'
-	},
-	orange: {
-		main: '#f3a683',
-		accent: '#f7d794',
-		light: true
-	},
-	red: {
-		main: '#ea8685',
-		accent: '#f3a683',
-		light: true
-	}
-};
-
 export default class Home extends Component {
 
 	constructor() {
@@ -57,8 +30,10 @@ export default class Home extends Component {
 		const width = this.container.clientWidth;
 		const height = this.container.clientHeight;
 
-		const innerWidth = width * 0.5;
-		const innerHeight = height * 0.5;
+		console.log(width, height);
+
+		const innerWidth = width * 0.7;
+		const innerHeight = height * 0.7;
 
 		const top = (height - innerHeight) / 2;
 		const left = (width - innerWidth) / 2;
@@ -94,21 +69,13 @@ export default class Home extends Component {
 
 		return (
 			<div class={style.mut_svg_container} ref={c => this.container = c}>
-				<Circle color={colors.blue} ref={c => this.circles.push(c)}>
-					<Sphere num={4} size={sphereSize} color={colors.blue.main} style={content.mut_acm_sphere} />
+				<Circle ref={c => this.circles.push(c)}>
+					<Sphere num={4} size={sphereSize} style={content.mut_acm_sphere} />
 				</Circle>
-				<Circle color={colors.green} ref={c => this.circles.push(c)}>
-
-				</Circle>
-				<Circle color={colors.yellow} ref={c => this.circles.push(c)}>
-
-				</Circle>
-				<Circle color={colors.orange} ref={c => this.circles.push(c)}>
-
-				</Circle>
-				<Circle color={colors.red} ref={c => this.circles.push(c)}>
-
-				</Circle>
+				<Circle ref={c => this.circles.push(c)}></Circle>
+				<Circle ref={c => this.circles.push(c)}></Circle>
+				<Circle ref={c => this.circles.push(c)}></Circle>
+				<Circle ref={c => this.circles.push(c)}></Circle>
 			</div>
 		);
 	}

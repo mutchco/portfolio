@@ -43,11 +43,17 @@ class App extends Component {
 })();
 
 (function () {
-	DOMTokenList.prototype.addMultiple = function(...classes) {
-    for (var i = 0, length = classes.length; i < length; i++) {
+	DOMTokenList.prototype.addMultiple = function (...classes) {
+    for (let i = 0, length = classes.length; i < length; i++) {
       this.add(classes[i]);
     }
-}
+	};
+
+	DOMTokenList.prototype.removeMultiple = function (...classes) {
+		for (let i = 0, length = classes.length; i < length; i++) {
+			this.remove(classes[i]);
+		}
+	};
 })();
 
 export default App;

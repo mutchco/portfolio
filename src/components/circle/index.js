@@ -2,8 +2,8 @@ import { h, Component } from 'preact';
 
 import style from './style';
 
-const colors = [style.mut_circle_color_1, style.mut_circle_color_2, style.mut_circle_color_3, style.mut_circle_color_4, style.mut_circle_color_5];
-const anims = [style.mut_circle_anim_1, style.mut_circle_anim_2, style.mut_circle_anim_3, style.mut_circle_anim_4, style.mut_circle_anim_5];
+let colors = Object.values(style).filter(item => (item.indexOf('color') > 0));
+let anims = Object.values(style).filter(item => (item.indexOf('anim') > 0));
 
 class Circle extends Component {
 
@@ -17,57 +17,43 @@ class Circle extends Component {
 
   clickHandler() {
 
-    this.circle.classList.add(style.mut_circle_opening);
+    this.circle.classList.replace(style.mut_circle_closed, style.mut_circle_opening);
     this.circle.classList.remove(this.anim);
 
     setTimeout(function () {
-      this.circle.classList.add(style.mut_circle_frank);
-      this.circle.classList.remove(style.mut_circle_opening);
+      this.circle.classList.replace(style.mut_circle_opening, style.mut_circle_frank);
     }.bind(this), 2);
 
-    window.setTimeout(function () {
+    setTimeout(function () {
       document.body.classList.addMultiple(this.color, style.mut_body_close_shown);
+      if (this.luminance > 0.279) {
+        document.body.classList.add(style.mut_body_light);
+      } else {
+        document.body.classList.remove(style.mut_body_light);
+      }
     }.bind(this), 50);
 
     setTimeout(function() {
-      this.circle.classList.add(style.mut_circle_open);
-      this.circle.classList.remove(style.mut_circle_frank);
-    }.bind(this), 300);
+      this.circle.classList.replace(style.mut_circle_frank, style.mut_circle_open);
+    }.bind(this), 200);
 
     document.getElementById('mut_close_button').onclick = this.closeHandler.bind(this);
   }
 
   closeHandler() {
 
-    this.starting = true;
-    this.circle.className = style.mut_circle;
-    this.circle.style.transition = 'none';
-    this.circle.style.transform = 'scale(25)';
-    this.circle.style.width = (this.radius * 2) + 'px';
-    this.circle.style.height = (this.radius * 2) + 'px';
-    this.circle.style.position = 'fixed';
-    this.circle.style.zIndex = 10;
-    this.circle.style.borderRadius = '50%';
+    this.circle.classList.replace(style.mut_circle_open, style.mut_circle_closing);
 
     setTimeout(function () {
-      this.circle.style.transition = 'all 0.2s ease-out';
-      this.circle.style.transform = `translate(${this.x}px, ${this.y}px)`;
-  		document.body.style.background = '#f7f1e3';
-      if (this.color.light) {
-        this.circle.dispatchEvent(new CustomEvent('toggleLight', { detail: true, bubbles: true }));
-      }
-      this.circle.dispatchEvent(new CustomEvent('toggleClose', { detail: false, bubbles: true  }));
+      this.circle.classList.replace(style.mut_circle_closing, this.anim);
+    }.bind(this), 300);
+
+    window.setTimeout(function () {
+      this.circle.classList.addMultiple(style.mut_circle_closed);
+      document.body.classList.remove(this.color);
+      document.body.classList.remove(style.mut_body_close_shown);
+      document.body.classList.remove(style.mut_body_light);
     }.bind(this), 1);
-
-    setTimeout(function() {
-      this.circle.style.boxShadow = '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)';
-      this.circle.style.zIndex = 1;
-    }.bind(this), 100);
-
-    setTimeout(function () {
-      this.circle.dispatchEvent(new Event('start'));
-      this.starting = false;
-    }.bind(this), 200);
   }
 
   setLocation(circles, defs) {
@@ -87,7 +73,7 @@ class Circle extends Component {
 
   detectCollision(otherCircle) {
 
-    const factor = this.radius * 3;
+    const factor = Math.max(window.innerWidth, window.innerHeight) / 8;
 
 		const top = otherCircle.y - factor;
 		const bottom = otherCircle.y + factor;
@@ -103,8 +89,8 @@ class Circle extends Component {
 
   build() {
 
-    this.color = colors[this.getRandomWithin(1, 6) - 1];
-    this.anim = anims[this.getRandomWithin(1, 6) - 1];
+    this.color = colors.shift();
+    this.anim = anims.shift();
 
     this.circle.classList.addMultiple(this.color, this.anim);
     this.circle.style.top = `${this.y}px`;
@@ -113,10 +99,40 @@ class Circle extends Component {
 
     window.setTimeout(function () {
       this.circle.classList.add(style.mut_circle_ready);
+
+      let rgb = window.getComputedStyle(this.circle, null).getPropertyValue('background-color');
+
+      if (rgb.indexOf('rgb') >= 0) {
+        rgb = rgb.split('(')[1].split(')')[0].split(',');
+        rgb = { r: rgb[0], g: rgb[1], b: rgb[2] };
+      } else {
+        rgb = this.hexToRgb(this.circle.style.backgroundColor);
+      }
+
+      for (let c in rgb) {
+        let v = rgb[c] / 255;
+        if (v < 0.03928) {
+          v = v / 12.92;
+        } else {
+          v = ((v + 0.055) / 1.055) ^ 2.4
+        }
+        rgb[c] = v;
+      }
+
+      this.luminance = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
+
     }.bind(this), 25);
 
     return { x: this.x, y: this.y };
   }
+
+  hexToRgb(hex) {
+    const r = hex >> 16;
+    const g = hex >> 8 & 0xFF;
+    const b = hex & 0xFF;
+    return {r,g,b};
+}
+
 
   componentDidMount() {
     this.circle.setLocation = this.setLocation;
@@ -127,7 +143,7 @@ class Circle extends Component {
   render({ children }) {
 
     return (
-      <div class={style.mut_circle} ref={c => this.circle = c}>
+      <div class={`${style.mut_circle} ${style.mut_circle_closed}`} ref={c => this.circle = c}>
         {children}
       </div>
     );

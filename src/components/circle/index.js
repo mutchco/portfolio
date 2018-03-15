@@ -11,7 +11,6 @@ class Circle extends Component {
     super();
 
     this.clickHandler = this.clickHandler.bind(this);
-    this.setLocation = this.setLocation.bind(this);
     this.closeHandler = this.closeHandler.bind(this);
   }
 
@@ -56,83 +55,23 @@ class Circle extends Component {
     }.bind(this), 1);
   }
 
-  setLocation(circles, defs) {
+  build(left, top) {
 
-    this.defs = defs;
-    this.x = this.getRandomWithin(defs.left, defs.right);
-    this.y = this.getRandomWithin(defs.top, defs.bottom);
-
-    for (let i = 0; i < circles.length; i++) {
-      if(this.detectCollision(circles[i]) === true) {
-        return this.setLocation(circles, defs);
-      }
-    }
-
-    return this;
-  }
-
-  detectCollision(otherCircle) {
-
-    const factor = Math.max(window.innerWidth, window.innerHeight) / 8;
-
-		const top = otherCircle.y - factor;
-		const bottom = otherCircle.y + factor;
-		const left = otherCircle.x - factor;
-		const right = otherCircle.x + factor;
-
-		return this.y > top && this.y < bottom && this.x > left && this.x < right;
-	}
-
-  getRandomWithin(min, max) {
-    return Math.floor(Math.random()*(max-min+1)+min);
-  }
-
-  build() {
-
+    this.top = top;
+    this.left = left;
     this.color = colors.shift();
     this.anim = anims.shift();
 
     this.circle.classList.addMultiple(this.color, this.anim);
-    this.circle.style.top = `${this.y}px`;
-    this.circle.style.left = `${this.x}px`;
+    this.circle.style.top = `${this.top}px`;
+    this.circle.style.left = `${this.left}px`;
     this.circle.addEventListener('click', this.circleClick);
 
     window.setTimeout(function () {
       this.circle.classList.add(style.mut_circle_ready);
-
-      let rgb = window.getComputedStyle(this.circle, null).getPropertyValue('background-color');
-
-      if (rgb.indexOf('rgb') >= 0) {
-        rgb = rgb.split('(')[1].split(')')[0].split(',');
-        rgb = { r: rgb[0], g: rgb[1], b: rgb[2] };
-      } else {
-        rgb = this.hexToRgb(this.circle.style.backgroundColor);
-      }
-
-      for (let c in rgb) {
-        let v = rgb[c] / 255;
-        if (v < 0.03928) {
-          v = v / 12.92;
-        } else {
-          v = ((v + 0.055) / 1.055) ^ 2.4
-        }
-        rgb[c] = v;
-      }
-
-      this.luminance = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
-
     }.bind(this), 25);
 
-    return { x: this.x, y: this.y };
   }
-
-  hexToRgb(hex) {
-    const r = hex >> 16;
-    const g = hex >> 8 & 0xFF;
-    const b = hex & 0xFF;
-    return {r,g,b};
-}
-
 
   componentDidMount() {
     this.circle.setLocation = this.setLocation;
@@ -144,6 +83,10 @@ class Circle extends Component {
 
     return (
       <div class={`${style.mut_circle} ${style.mut_circle_closed}`} ref={c => this.circle = c}>
+        <div class={style.mut_image_container}>
+          <img src='/assets/expanded.png' />
+          <div class={style.mut_gradient}></div>
+        </div>
         {children}
       </div>
     );

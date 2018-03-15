@@ -1,11 +1,11 @@
 .mut_svg_container {
-	width:100%;
-	height: calc(100% - 159px);
+	width: calc(100% - 64px);
+	height: calc(100% - 207px);
 	display: inline-block;
 	position: relative;
 	vertical-align: middle;
 	/* overflow-y: scroll; */
-	margin: 175px 0 0 0;
+	margin: 175px 32px 32px 32px;
 }
 
 .mut_svg_container::-webkit-scrollbar {

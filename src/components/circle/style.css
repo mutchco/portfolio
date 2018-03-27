@@ -2,7 +2,7 @@
 	width: 104px;
 	height: 104px;
 	position: absolute;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 	z-index: 1;
 	cursor: pointer;
 	border-radius: 50%;
@@ -18,7 +18,7 @@
 .mut_circle_frank *,
 .mut_circle_closing *,
 .mut_circle_closed * {
-	opacity: 0!important;
+	opacity: 0 !important;
 	pointer-events: none;
 	transition: opacity 0.3s linear;
 }
@@ -47,48 +47,32 @@
 	transform: scale(25);
 }
 
-.mut_image_container {
-	position: relative;
-	width: 100%;
-	height: 50%;
-	overflow: hidden;
+.mut_circle img {
+	width: 	calc(100% - 64px);
+	max-width: 1024px;
+	opacity: 0;
+	margin: 16px 32px;
 }
 
-.mut_image_container img {
-	height: 100%;
-	position: absolute;
+.mut_circle p {
+	color: #f7f1e3;
+	opacity: 0;
+	font-family: 'Inconsolata', monospace;
+	font-size: 20px;
+	margin: 8px 32px;
 }
 
-.mut_gradient {
-	width:100%;
-	height:200%;
-	position: absolute;
-	top: 0;
-	left: 0;
+.mut_circle_open img {
+	opacity: 1;
+	transition: opacity 0.3s ease-in;
+	transition-delay: 0.4s;
+  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.mut_circle_color_1 {
-	background: #778beb;
-}
-
-.mut_circle_color_1 .mut_gradient {
-
-}
-
-.mut_circle_color_2 {
-	background: #63cdda;
-}
-
-.mut_circle_color_3 {
-	background: #f7d794;
-}
-
-.mut_circle_color_4 {
-	background: #f3a683;
-}
-
-.mut_Circle_color_5 {
-	background: #ea8685;
+.mut_circle_open p {
+	opacity: 1;
+	transition: opacity 0.3s ease-in;
+	transition-delay: 0.4s;
 }
 
 .mut_circle_anim_1 {
@@ -136,6 +120,14 @@
 		top: calc(50% - 64px);
 		left: calc(50% - 64px);
 	}
+
+	.mut_circle img {
+		margin: 16px;
+	}
+
+	.mut_circle p {
+		margin: 8px 16px;
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -153,14 +145,15 @@
 
 .mut_circle_open {
 	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0 !important;
+	height: calc(100% - 159px);
+	position: fixed;
+	top: 159px !important;
 	left: 0 !important;
 	transition: none;
 	transform: none;
 	border-radius: 0;
 	box-shadow: none;
+	padding: 32px;
 }
 
 .mut_circle_closing {

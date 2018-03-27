@@ -1,11 +1,11 @@
 {
-  "name": "mutchco",
+  "name": "Tyler Mutch",
   "short_name": "mutchco",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "background_color": "#f7f1e3",
+  "theme_color": "#f7f1e3",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",

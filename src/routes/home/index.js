@@ -4,9 +4,7 @@ import style from './style';
 import content from './content';
 
 import Circle from '../../components/circle';
-import CircleContent from '../../components/circle-content';
-
-import Bubble from '../../components/bubble';
+import Title from '../../components/title';
 import Line from  '../../components/line';
 import Sphere from '../../components/sphere';
 
@@ -20,8 +18,8 @@ export default class Home extends Component {
 
 	componentDidMount() {
 
-		const width = this.container.offsetWidth;
-		const height = this.container.offsetHeight;
+		const width = this.base.offsetWidth;
+		const height = this.base.offsetHeight;
 
 		let circleRadius;
 
@@ -35,33 +33,21 @@ export default class Home extends Component {
 			circleRadius = 52;
 		}
 
-		const desiredCell = Math.floor((circleRadius * 2) + (circleRadius * 2 * 0.3));
-		let maximumColums = 16;
-		let maximumRows = 16;
+		const desiredCell = circleRadius * 2.5;
+		const columns = Math.floor(width / desiredCell);
+		const rows = Math.floor(height / desiredCell);
+		const maximum = columns * rows;
 
-		let currentColumns = 0;
-		let currentRows = 0;
-
-		while (currentColumns < desiredCell && maximumColums > 0) {
-			currentColumns = width / maximumColums;
-			--maximumColums;
-		}
-
-		while (currentRows < desiredCell && maximumRows > 0) {
-			currentRows = width / maximumRows;
-			--maximumRows;
-		}
-
-		const maximum = maximumColums * maximumRows;
+		console.log(desiredCell, columns, rows);
 
 		let items = [];
 		for (let i = 0; i < this.circles.length; i++) {
 
 			const random = this.getRandom(items, maximum);
-			const x = random % maximumColums;
-			const y = Math.round(random / maximumColums);
-			const top = y * currentRows;
-			const left = x * currentColumns;
+			const x = random % columns;
+			const y = Math.round(random / columns);
+			const top = y * desiredCell;
+			const left = x * desiredCell;
 
 			items.push(random)
 			this.circles[i].build(left, top);
@@ -85,22 +71,61 @@ export default class Home extends Component {
 
 	render() {
 
-		const viewportSize = Math.max(window.innerWidth, window.innerHeight);
-		const sphereSize =viewportSize / 2;
-		const bubbleSize = viewportSize / 4;
-
-		const size = Math.max(window.innerWidth, window.innerHeight) / 4;
-
 		return (
-			<div class={style.mut_svg_container} ref={c => this.container = c}>
-				<Circle ref={c => this.circles.push(c)}>
-					<Sphere num={4} size={sphereSize} style={content.mut_acm_sphere} />
+			<div class={style.mut_svg_container}>
+				<Circle color={style.mut_circle_color_1} ref={c => this.circles.push(c)}>
+					<div class={style.mut_content_wrapper}>
+						<Title size='big' delay='0s'> Action Matrix </Title>
+						<Title size='med' delay='0.2s'> Angular/.NET/NHibernate </Title>
+						<Title size='small' delay='0.4s'> 2012-2015 </Title>
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/expanded.png' />
+						<p>
+							Action Matrix is the third iteration of an inventory control, routing and customer relations management software. It's targeted at the construction and waste management industry and has proven to reduce fuel costs by up to 25% through it's unique
+				      routing system. The user-centric web app and accompanying Android app provide real-time information specific to the client, it uses a combination of NFC and RFID tags to identify inventory. It includes custom built hardware that relays information
+				      from scales and RFID readers to the Android app.
+						</p>
+					</div>
+					<Sphere num={4} styleClass={content.mut_acm_sphere} />
 				</Circle>
-				<Circle ref={c => this.circles.push(c)}></Circle>
-				<Circle ref={c => this.circles.push(c)}></Circle>
-				<Circle ref={c => this.circles.push(c)}></Circle>
-				<Circle ref={c => this.circles.push(c)}></Circle>
-			</div>
-		);
+				<Circle color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
+					<div class={style.mut_content_wrapper}>
+						<Title size='big' delay='0s'> Farcast </Title>
+						<Title size='med' delay='0.2s'> Android/node.js/react </Title>
+						<Title size='small' delay='0.4s'> 2015-2016 </Title>
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/farcast.png' />
+						<p>
+							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence on advertising while also providing key insights about the audience. With Farcast I focused
+				      on building out the Android portion of their platform while also managing the development of several key backend services such as authentication, messaging and media recommendations.
+						</p>
+					</div>
+				</Circle>
+				<Circle color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
+					<div class={style.mut_content_wrapper}>
+						<Title size='big' delay='0s'> Paywallz </Title>
+						<Title size='med' delay='0.2s'> node.js/javascript/stripe.js </Title>
+						<Title size='small' delay='0.4s'> 2015-2016 </Title>
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/paywallz.png' />
+						<p>		
+				      Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup. With Paywallz I was responsible for building the payemnt processing service as well as the external JavaScript that is loaded onto
+				      the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
+						</p>
+					</div>
+				</Circle>
+				<Circle color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
+					<div class={style.mut_content_wrapper}>
+						<Title size='big' delay='0s'> Other Work </Title>
+						<Title size='med' delay='0.2s'> Android/node.js/react/Print media </Title>
+						<Title size='small' delay='0.4s'> 2015-2018 </Title>
+						<br />
+						<Title size='large' delay='0s'> Fin-Wall Website </Title>
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/finex.png' />
+						<br />
+						<Title size='large' delay='0s'> HQ mini </Title>
+						<img class={`mut_item`} src='/assets/hq4.png' />
+					</div>
+				</Circle>
+				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}></Circle>
+				</div>
+			);
+		}
 	}
-}

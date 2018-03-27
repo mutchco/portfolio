@@ -1,8 +1,15 @@
 .mut_acm_sphere {
+  height: 50vw;
+  width: 50vw;
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translate(-50%, 25%);
+  transform: translate(-40%, 40%);
+  z-index: 0 !important;
+}
+
+p {
+  float: left;
 }
 
 .mut_acm_line {

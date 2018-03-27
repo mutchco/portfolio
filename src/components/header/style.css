@@ -8,21 +8,22 @@
 	position: fixed;
 }
 
-.mut_header h1 {
-	font-size: 32px;
+.mut_header h1,
+.mut_header h2 {
 	font-weight: 700;
 	font-family: 'Source Code Pro', monospace;
-	margin: 0 32px 8px 0;
 	color: #84817a;
+}
+
+.mut_header h1 {
+	font-size: 32px;
+	margin: 0 32px 8px 0;
 }
 
 .mut_header h2 {
 	opacity: 0.4;
 	margin: 0;
 	font-size: 18px;
-	color: #84817a;
-	font-weight: 700;
-	font-family: 'Source Code Pro', monospace;
 }
 
 .mut_header svg {

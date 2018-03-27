@@ -8,15 +8,56 @@
 	margin: 175px 32px 32px 32px;
 }
 
-.mut_svg_container::-webkit-scrollbar {
-    width: 8	px;
+.mut_content_wrapper {
+	padding: 32px;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 11 !important;
+	overflow-y: scroll;
 }
 
-.mut_svg_container::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+.mut_content_wrapper::-webkit-scrollbar {
+    width: 4px;
+		background: rgba(0, 0, 0, 0);
 }
 
-.mut_svg_container::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+.mut_content_wrapper::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0);
+}
+
+.mut_content_wrapper::-webkit-scrollbar-thumb {
+    width: 8px;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+/* Blue */
+.mut_circle_color_1 {
+	background: #778beb;
+}
+
+.mut_circle_color_1 .mut_sphere {
+	background: #778beb;
+}
+
+/*Green*/
+.mut_circle_color_2 {
+	background: #63cdda;
+}
+
+/*Yellow*/
+.mut_circle_color_3 {
+	background: #f7d794;
+}
+
+/*Orange*/
+.mut_circle_color_4 {
+	background: #f3a683;
+}
+
+/*Red*/
+.mut_circle_color_5 {
+	background: #ea8685;
 }

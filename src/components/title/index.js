@@ -19,8 +19,9 @@ class Title extends Component {
     this.base.close = this.close.bind(this);
   }
 
-  render({ size, children, delay }) {
+  render({ size, delay, href, children }) {
 
+    let content;
     let classes = [style.mut_title, 'mut_item'];
 
     switch (size) {
@@ -38,10 +39,17 @@ class Title extends Component {
         break;
     }
 
+    if (!!href) {
+      content = (<a href={href} target='_blank' ref={s => this.span = s}>{children}</a>);
+    } else {
+      content = (<span ref={s => this.span = s}>{children}</span>);
+    }
+
+
     return (
       <div class={classes.join(' ')} ref={c => this.container = c} style={`transition-delay: ${delay}`}>
         {children}
-        <span ref={s => this.span = s}>{children}</span>
+        {content}
       </div>
     );
 

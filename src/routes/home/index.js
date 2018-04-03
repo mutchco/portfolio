@@ -129,25 +129,31 @@ class Home extends Component {
 					<div class={style.mut_content_wrapper}>
 
 						<Title size='big' delay='0s'> Other Work </Title>
-						<Title size='med' delay='0.2s'> Android/node.js/react/print </Title>
+						<Title size='med' delay='0.2s'> web/android/print </Title>
 						<Title size='small' delay='0.4s'> 2015-2018 </Title>
 						<br />
 
-						<Title size='large' delay='0s'> Fin-Wall </Title>
+						<Title href='https://mutch.co' size='large' delay='0s'> mutch.co </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thick}`}>
-							<img class={`${style.mut_image_list}`} src='/assets/finwall.png' />
+							<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
+							<p>I built this website in 2015 for a local waste management company, it featured animated wheat inspired by the landscape they were founded in and a retro design matching their 25 years of local, family ownership</p>
+						</div>
+
+						<Title href='http://www.finwall.ca' size='large' delay='0s'> finwall.ca </Title>
+						<div class={`${style.mut_row} ${style.mut_row_thick} ${style.mut_row_reverse}`}>
+							<img class={`${style.mut_list_image}`} src='/assets/finwall.png' />
 							<p>I built this website in 2015 for a local waste management company, it featured animated wheat inspired by the landscape they were founded in and a retro design matching their 25 years of local, family ownership</p>
 						</div>
 
 						<Title size='large' delay='0s'> HQ mini </Title>
-						<div class={`${style.mut_row} ${style.mut_row_reverse} ${style.mut_row_thin}`}>
-							<img class={`${style.mut_image_list}`} src='/assets/hqmini.png' />
+						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
+							<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
 							<p>HQ Mini is the mobile addition to GPS Police's ecosystem, it was a simple interface, using mapbox apis and JWT authentication</p>
 						</div>
 
 						<Title size='large' delay='0s'> Kurrent Motion </Title>
-						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
-							<img class={`${style.mut_image_list}`} src='/assets/kurrentmotion.png' />
+						<div class={`${style.mut_row} ${style.mut_row_thin} ${style.mut_row_reverse}`}>
+							<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion.png' />
 							<p>Kurrent Motion was a client of mine in 2015, I managed their branding, built their website and designed their print media, including this poster</p>
 						</div>
 
@@ -155,7 +161,16 @@ class Home extends Component {
 				</Circle>
 				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
 					<Title size='big'>Hi, I'm Tyler</Title>
-					<img class={`${style.mut_image_list}`} src='/assets/tyler.jpg' />
+					<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
+					<p>
+						I was born in Vancouver in 1990, I've lived all over Western Canada and spent a few years in New Zealand.
+					</p>
+					<form onSubmit={this.emailSubmit}>
+						<h4>Send me an email</h4>
+						<input type='text' name='email' />
+						<input type='text' name='name' />
+						<textarea name='comment'></textarea>
+					</form>
 				</Circle>
 				<div class={style.mut_footer}>
 					<a href='https://github.com/mutchco/portfolio' target='_blank'>&copy; Tyler Mutch {(new Date()).getFullYear()}</a>

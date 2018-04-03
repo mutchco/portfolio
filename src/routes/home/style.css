@@ -30,7 +30,14 @@
 	background: rgba(255, 255, 255, 0.3);
 }
 
-.mut_image_list {
+.mut_content_wrapper:after {
+  content: "";
+  display: block;
+  height: 160px;
+  width: 100%;
+}
+
+.mut_list_image {
 	width: auto !important;
 	max-width: calc(100% - 32px) !important;
 	max-height: 400px;
@@ -41,12 +48,6 @@
 	align-items: center;
 	flex-wrap: wrap;
 	margin-bottom: 32px;
-}
-
-@media only screen and (min-width : 1200px) {
-	.mut_row_thick {
-		flex-wrap: nowrap;
-	}
 }
 
 @media only screen and (min-width : 768px) {

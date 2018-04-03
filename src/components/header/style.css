@@ -38,6 +38,6 @@
 	fill: #84817a;
 }
 
-.mut_close:hover {
+.mut_header svg:hover {
 	opacity: 0.7;
 }

@@ -68,6 +68,7 @@ class Circle extends Component {
 
         //Add closed class to circle
         this.base.classList.add(style.mut_circle_closed);
+        this.base.classList.removeMultiple(style.mut_circle_closing, style.mut_circle_fred);
 
         //Hide close button and change header color back
         document.body.classList.removeMultiple(style.mut_body_close_shown, style.mut_body_light);

@@ -1,4 +1,4 @@
-# Tyler Mutch Portfolio website
+# Tyler Mutch portfolio website
 
 ## CLI Commands
 

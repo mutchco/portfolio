@@ -9,5 +9,74 @@
 }
 
 .mut_far_linebox {
-  
+  position: absolute;
+  width: 100%;
+  top: 200px;
+  left: 50%;
+}
+
+.mut_far_linebox div {
+  background: #ea8685;
+  animation: line 3s infinite ease-out alternate;
+}
+
+.mut_far_linebox div:nth-child(2) {
+  margin: 0 0 0 2.5%;
+  animation-delay: 200ms;
+}
+
+.mut_far_linebox div:nth-child(3) {
+  margin: 0 0 0 5%;
+  animation-delay: 400ms;
+}
+
+.mut_far_linebox div:nth-child(4) {
+  margin: 0 0 0 7.5%;
+  animation-delay: 600ms;
+}
+
+.mut_far_linebox div:nth-child(5) {
+  margin: 0 0 0 10%;
+  animation-delay: 800ms;
+}
+
+.mut_far_linebox div:nth-child(6) {
+  margin: 0 0 0 12.5%;
+  animation-delay: 1000ms;
+}
+
+.mut_far_linebox div:nth-child(7) {
+  margin: 0 0 0 15%;
+  animation-delay: 1200ms;
+}
+
+.mut_far_linebox div:nth-child(8) {
+  margin: 0 0 0 17.5%;
+  animation-delay: 1400ms;
+}
+
+.mut_pay_sphere {
+  background: #63cdda;
+  height: 75vw;
+  width: 75vw;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  transform: translateX(40%);
+}
+
+.mut_other_line {
+  margin: 32px 16px;
+}
+
+@keyframes line {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(16px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

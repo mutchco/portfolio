@@ -99,7 +99,7 @@ class Home extends Component {
 				      from scales and RFID readers to the Android app.
 						</p>
 					</div>
-					<Sphere num={4} styleClass={content.mut_acm_sphere} />
+					<Sphere num={4} style-class={content.mut_acm_sphere} />
 				</Circle>
 				<Circle color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
@@ -111,14 +111,16 @@ class Home extends Component {
 							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence on advertising while also providing key insights about the audience. With Farcast I focused
 				      on building out the Android portion of their platform while also managing the development of several key backend services such as authentication, messaging and media recommendations.
 						</p>
-						<div class={content.mut_far_linebox}>
-							<Line size='24px' />
-							<Line size='24px' />
-							<Line size='24px' />
-							<Line size='24px' />
-							<Line size='24px' />
-							<Line size='24px' />
-						</div>
+					</div>
+					<div class={content.mut_far_linebox}>
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
 					</div>
 				</Circle>
 				<Circle color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
@@ -132,6 +134,7 @@ class Home extends Component {
 					    the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
 						</p>
 					</div>
+					<Sphere num={3} style-class={content.mut_pay_sphere} />
 				</Circle>
 				<Circle color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
@@ -141,49 +144,53 @@ class Home extends Component {
 						<Title size='small' delay='0.4s'> 2015-2018 </Title>
 						<br />
 
-						<Title href='https://mutch.co' size='large' delay='0s'> mutch.co </Title>
-						<div class={`${style.mut_row} ${style.mut_row_thick}`}>
-							<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
-							<p>
-								My biggest dilemna in web design is always intuitive navigation, I find modern navigation to often
-								be clunky and encumbered. I decided that for my portfolio website I would make the duality of navigation and discovery front and center, instead of traditional navigation 
-								paradigms. Each bubble represents a significant part of my career, they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
-								discover the content. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
-							</p>
-						</div>
-						<Line size='24px' />
+						<div class={style.mut_row_wrapper}>
+							<Title href='https://mutch.co' size='large' delay='0s'> mutch.co </Title>
+							<div class={`${style.mut_row}`}>
+								<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
+								<p>
+									My biggest dilemna in web design is always intuitive navigation, I find modern navigation to often
+									be clunky and encumbered. I decided that for my portfolio website I would make the duality of navigation and discovery front and center, instead of traditional navigation 
+									paradigms. Each bubble represents a significant part of my career, they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
+									discover the content. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
+								</p>
+							</div>
+							<Line style-class={content.mut_other_line} size={24} />
 
-						<Title href='http://www.finwall.ca' size='large' delay='0s'> finwall.ca </Title>
-						<div class={`${style.mut_row} ${style.mut_row_thick} ${style.mut_row_reverse}`}>
-							<img class={`${style.mut_list_image}`} src='/assets/finwall.png' />
-							<p>
-								Fin-Wall Site Services is a local, family owned company that has been thriving in Southern Alberta for over 25 years. For the design of this website I took inspiration 
-								from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of what the company stands for. 
-								For the design of the logo, I kept it simple and came up with a 2D rendition of the companies patented wall support technology, something the founding family remained proud of 
-								through the whole lifetime of the company.
-							</p>
-						</div>
-						<Line size='24px' />
+							<Title href='http://www.finwall.ca' size='large' delay='0s'> finwall.ca </Title>
+							<div class={`${style.mut_row}`}>
+								<img class={`${style.mut_list_image}`} src='/assets/finwall.png' />
+								<p>
+									Fin-Wall Site Services is a local, family owned company that has been thriving in Southern Alberta for over 25 years. For the design of this website I took inspiration 
+									from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of what the company stands for. 
+									For the design of the logo, I kept it simple and came up with a 2D rendition of the companies patented wall support technology, something the founding family remained proud of 
+									through the whole lifetime of the company.
+								</p>
+							</div>
+							<Line style-class={content.mut_other_line} size={24} />
 
-						<Title size='large' delay='0s'> HQ mini </Title>
-						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
-							<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
-							<p>
-								HQ Mini is Android piece of the GPS Police puzzle, it allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
-								used MapBox for itʼs map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
-								had permission. It used REST apis and JWT authentication for backend communication.
-							</p>
-						</div>
-						<Line size='24px' />
+							<Title size='large' delay='0s'> HQ mini </Title>
+							<div class={`${style.mut_row}`}>
+								<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
+								<img class={`${style.mut_list_image}`} src='/assets/hqmini2.png' />
+								<p>
+									HQ Mini is Android piece of the GPS Police puzzle, it allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
+									used MapBox for itʼs map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
+									had permission. It used REST apis and JWT authentication for backend communication.
+								</p>
+							</div>
+							<Line style-class={content.mut_other_line} size={24} />
 
-						<Title size='large' delay='0s'> Kurrent Motion </Title>
-						<div class={`${style.mut_row} ${style.mut_row_thin} ${style.mut_row_reverse}`}>
-							<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion.png' />
-							<p>
-								Kurrent Motion is a hula hoop company that I had as a client during my tenure in New Zealand, I managed their branding, logo design and print media. I created this poster and 
-								brochure to be used in cafes and ad boards. They feature simple design and imagery that focus on the nature of the client. I used playful and elegant typefaces that 
-								have the same character as the circus roots the client was founded in.
-							</p>
+							<Title size='large' delay='0s'> Kurrent Motion </Title>
+							<div class={`${style.mut_row}`}>
+								<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion.png' />
+								<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion2.png' />
+								<p>
+									Kurrent Motion is a hula hoop company that I had as a client during my tenure in New Zealand, I managed their branding, logo design and print media. I created this poster and 
+									brochure to be used in cafes and ad boards. They feature simple design and imagery that focus on the nature of the client. I used playful and elegant typefaces that 
+									have the same character as the circus roots the client was founded in.
+								</p>
+							</div>
 						</div>
 
 					</div>

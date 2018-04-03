@@ -4,9 +4,9 @@ import styles from './style';
 
 class Line extends Component {
 
-  render({ size, color, style }) {
+  render({ size }) {
 
-    return (<div class={`${styles.mut_line} ${style}`} style={`height: ${size}px; background: ${color}`}></div>)
+    return (<div class={`${styles.mut_line}`} style={`height: ${size}px`}></div>)
 
   }
 

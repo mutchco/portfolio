@@ -111,6 +111,14 @@ class Home extends Component {
 							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence on advertising while also providing key insights about the audience. With Farcast I focused
 				      on building out the Android portion of their platform while also managing the development of several key backend services such as authentication, messaging and media recommendations.
 						</p>
+						<div class={content.mut_far_linebox}>
+							<Line size='24px' />
+							<Line size='24px' />
+							<Line size='24px' />
+							<Line size='24px' />
+							<Line size='24px' />
+							<Line size='24px' />
+						</div>
 					</div>
 				</Circle>
 				<Circle color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
@@ -137,12 +145,13 @@ class Home extends Component {
 						<div class={`${style.mut_row} ${style.mut_row_thick}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
 							<p>
-								The thing that I struggle with the most in web design is intuitive navigation, I find modern navigation to often
-								be clunky and encumbered. I decided that for my portfolio I would make the duality of navigation and discovery front and center instead of traditional navigation 
-								paradigms. Each bubble representing a significant part of my career, they beg the user for interaction, and only via curiosity (or maybe frustration) will the user 
+								My biggest dilemna in web design is always intuitive navigation, I find modern navigation to often
+								be clunky and encumbered. I decided that for my portfolio website I would make the duality of navigation and discovery front and center, instead of traditional navigation 
+								paradigms. Each bubble represents a significant part of my career, they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
 								discover the content. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
 							</p>
 						</div>
+						<Line size='24px' />
 
 						<Title href='http://www.finwall.ca' size='large' delay='0s'> finwall.ca </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thick} ${style.mut_row_reverse}`}>
@@ -154,6 +163,7 @@ class Home extends Component {
 								through the whole lifetime of the company.
 							</p>
 						</div>
+						<Line size='24px' />
 
 						<Title size='large' delay='0s'> HQ mini </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
@@ -164,6 +174,7 @@ class Home extends Component {
 								had permission. It used REST apis and JWT authentication for backend communication.
 							</p>
 						</div>
+						<Line size='24px' />
 
 						<Title size='large' delay='0s'> Kurrent Motion </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thin} ${style.mut_row_reverse}`}>

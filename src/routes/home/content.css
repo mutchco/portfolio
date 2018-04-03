@@ -8,18 +8,6 @@
   z-index: 0 !important;
 }
 
-p {
-  float: left;
-}
-
-.mut_acm_line {
-  position: absolute;
-  top: 2%;
-  left: 35%;
-}
-
-.mut_acm_bubble {
-  position: absolute;
-  top: 2%;
-  left: 2%;
+.mut_far_linebox {
+  
 }

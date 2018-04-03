@@ -158,8 +158,8 @@ class Home extends Component {
 					<img class={`${style.mut_image_list}`} src='/assets/tyler.jpg' />
 				</Circle>
 				<div class={style.mut_footer}>
-					<span>&copy; Tyler Mutch {(new Date()).getFullYear()}</span>
-					<a href='https://preactjs.com/'>built with preact</a>
+					<a href='https://github.com/mutchco/portfolio' target='_blank'>&copy; Tyler Mutch {(new Date()).getFullYear()}</a>
+					<a href='https://preactjs.com/' target='_blank'>built with preact</a>
 				</div>
 			</div>
 		);

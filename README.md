@@ -1,4 +1,4 @@
-# {{ name }}
+# Tyler Mutch Portfolio website
 
 ## CLI Commands
 
@@ -20,16 +20,3 @@ npm run test
 ```
 
 For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-<link rel="manifest" href="/assets/site.webmanifest">
-<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#f7f1e3">
-<meta property="og:image" content="/assets/og-image.jpg">
-<meta property="og:image:width" content="1190">
-<meta property="og:image:height" content="623">
-<meta property="og:title" content="Tyler Mutch">
-<meta property="og:url" content="http://www.mutch.co">

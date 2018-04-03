@@ -136,25 +136,43 @@ class Home extends Component {
 						<Title href='https://mutch.co' size='large' delay='0s'> mutch.co </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thick}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
-							<p>I built this website in 2015 for a local waste management company, it featured animated wheat inspired by the landscape they were founded in and a retro design matching their 25 years of local, family ownership</p>
+							<p>
+								The thing that I struggle with the most in web design is intuitive navigation, I find modern navigation to often
+								be clunky and encumbered. I decided that for my portfolio I would make the duality of navigation and discovery front and center instead of traditional navigation 
+								paradigms. Each bubble representing a significant part of my career, they beg the user for interaction, and only via curiosity (or maybe frustration) will the user 
+								discover the content. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
+							</p>
 						</div>
 
 						<Title href='http://www.finwall.ca' size='large' delay='0s'> finwall.ca </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thick} ${style.mut_row_reverse}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/finwall.png' />
-							<p>I built this website in 2015 for a local waste management company, it featured animated wheat inspired by the landscape they were founded in and a retro design matching their 25 years of local, family ownership</p>
+							<p>
+								Fin-Wall Site Services is a local, family owned company that has been thriving in Southern Alberta for over 25 years. For the design of this website I took inspiration 
+								from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of what the company stands for. 
+								For the design of the logo, I kept it simple and came up with a 2D rendition of the companies patented wall support technology, something the founding family remained proud of 
+								through the whole lifetime of the company.
+							</p>
 						</div>
 
 						<Title size='large' delay='0s'> HQ mini </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
-							<p>HQ Mini is the mobile addition to GPS Police's ecosystem, it was a simple interface, using mapbox apis and JWT authentication</p>
+							<p>
+								HQ Mini is Android piece of the GPS Police puzzle, it's allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
+								used MapBox for it's map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
+								had permission. It used REST apis and JWT authentication for backend communication.
+							</p>
 						</div>
 
 						<Title size='large' delay='0s'> Kurrent Motion </Title>
 						<div class={`${style.mut_row} ${style.mut_row_thin} ${style.mut_row_reverse}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion.png' />
-							<p>Kurrent Motion was a client of mine in 2015, I managed their branding, built their website and designed their print media, including this poster</p>
+							<p>
+								Kurrent Motion is a hula hoop company that I had as a client during my tenure in New Zealand, I managed their branding, logo design and print media. I created this poster and 
+								brochure to be used in cafes and ad boards. They feature simple design and imagery that focus on the nature of the client. I used playful and elegant typefaces that 
+								have the same character as the circus roots the client was founded in.
+							</p>
 						</div>
 
 					</div>

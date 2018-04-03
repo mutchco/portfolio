@@ -36,9 +36,7 @@ export default class Home extends Component {
 		const desiredCell = circleRadius * 2.5;
 		const columns = Math.floor(width / desiredCell);
 		const rows = Math.floor(height / desiredCell);
-		const maximum = columns * rows;
-
-		console.log(desiredCell, columns, rows);
+		const maximum = columns * rows - rows;
 
 		let items = [];
 		for (let i = 0; i < this.circles.length; i++) {
@@ -78,7 +76,7 @@ export default class Home extends Component {
 						<Title size='big' delay='0s'> Action Matrix </Title>
 						<Title size='med' delay='0.2s'> Angular/.NET/NHibernate </Title>
 						<Title size='small' delay='0.4s'> 2012-2015 </Title>
-						<img class={`${style.mut_circle_image} mut_item`} src='/assets/expanded.png' />
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/actionmatrix.png' />
 						<p>
 							Action Matrix is the third iteration of an inventory control, routing and customer relations management software. It's targeted at the construction and waste management industry and has proven to reduce fuel costs by up to 25% through it's unique
 				      routing system. The user-centric web app and accompanying Android app provide real-time information specific to the client, it uses a combination of NFC and RFID tags to identify inventory. It includes custom built hardware that relays information
@@ -106,25 +104,45 @@ export default class Home extends Component {
 						<Title size='small' delay='0.4s'> 2015-2016 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/paywallz.png' />
 						<p>		
-				      Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup. With Paywallz I was responsible for building the payemnt processing service as well as the external JavaScript that is loaded onto
-				      the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
+					  	Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup. With Paywallz I was responsible for building the payemnt processing service as well as the external JavaScript that is loaded onto
+					    the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
 						</p>
 					</div>
 				</Circle>
 				<Circle color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
+
 						<Title size='big' delay='0s'> Other Work </Title>
-						<Title size='med' delay='0.2s'> Android/node.js/react/Print media </Title>
+						<Title size='med' delay='0.2s'> Android/node.js/react/print </Title>
 						<Title size='small' delay='0.4s'> 2015-2018 </Title>
 						<br />
-						<Title size='large' delay='0s'> Fin-Wall Website </Title>
-						<img class={`${style.mut_circle_image} mut_item`} src='/assets/finex.png' />
-						<br />
+
+						<Title size='large' delay='0s'> Fin-Wall </Title>
+						<div class={`${style.mut_row} ${style.mut_row_thick}`}>
+							<img class={`${style.mut_image_list}`} src='/assets/finwall.png' />
+							<p>I built this website in 2015 for a local waste management company, it featured animated wheat inspired by the landscape they were founded in and a retro design matching their 25 years of local, family ownership</p>
+						</div>
+
 						<Title size='large' delay='0s'> HQ mini </Title>
-						<img class={`mut_item`} src='/assets/hq4.png' />
+						<div class={`${style.mut_row} ${style.mut_row_reverse} ${style.mut_row_thin}`}>
+							<img class={`${style.mut_image_list}`} src='/assets/hqmini.png' />
+							<p>HQ Mini is the mobile addition to GPS Police's ecosystem, it was a simple interface, using mapbox apis and JWT authentication</p>
+						</div>
+
+						<Title size='large' delay='0s'> Kurrent Motion </Title>
+						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
+							<img class={`${style.mut_image_list}`} src='/assets/kurrentmotion.png' />
+							<p>Kurrent Motion was a client of mine in 2015, I managed their branding, built their website and designed their print media, including this poster</p>
+						</div>
+
 					</div>
 				</Circle>
-				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}></Circle>
+				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
+					<Title size='big'>Hi, I'm Tyler</Title>
+				</Circle>
+				<div class={style.mut_footer}>
+					<span>&copy; Tyler Mutch {(new Date()).getFullYear()}</span>
+					<a href='https://preactjs.com/'>built with preact</a></div>
 				</div>
 			);
 		}

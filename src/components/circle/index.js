@@ -2,89 +2,130 @@ import { h, Component } from 'preact';
 
 import style from './style';
 
-const anims = Object.values(style).filter(item => (item.indexOf('anim') > 0));
+/** @constant {Array[] anims Animation classes*/
+const anims = Object.keys(style).map(e => style[e]).filter(item => (item.indexOf('anim') > 0));
 
+/** Class representing a floating circle  */
 class Circle extends Component {
 
-  constructor(opts) {
+  constructor() {
     super();
 
     this.clickHandler = this.clickHandler.bind(this);
     this.closeHandler = this.closeHandler.bind(this);
   }
 
+  /**
+    * Click handler to open the circle
+  */
   clickHandler() {
 
-    this.base.classList.replace(style.mut_circle_closed, style.mut_circle_opening);
+    // Remove animation class
     this.base.classList.remove(this.anim);
 
-    setTimeout(function () {
-      this.base.classList.replace(style.mut_circle_opening, style.mut_circle_frank);
-    }.bind(this), 2);
+    requestAnimationFrame(() => {
 
-    setTimeout(function () {
-      document.body.classList.addMultiple(this.color, style.mut_body_close_shown, style.mut_body_light);
-    }.bind(this), 50);
+      //Replace closed class with open class
+      this.base.classList.replace(style.mut_circle_closed, style.mut_circle_opening);
 
-    setTimeout(function() {
-      this.base.classList.replace(style.mut_circle_frank, style.mut_circle_open);
-    }.bind(this), 200);
+      //Show the close button and change header font
+      document.body.classList.addMultiple(style.mut_body_close_shown, style.mut_body_light);
 
-    document.getElementById('mut_close_button').onclick = this.closeHandler.bind(this);
+      requestAnimationFrame(() => {
+        //Replace opening class with frank class (intermediary)
+        this.base.classList.replace(style.mut_circle_opening, style.mut_circle_frank);
+      });
 
-    for (let i = 0; i < this.items.length; i++) {
-      this.items[i].open && this.items[i].open();
-    }
+      setTimeout(() => {
+        //Replace frank class with open class
+        this.base.classList.replace(style.mut_circle_frank, style.mut_circle_open);
+      }, 200);
+
+      //Add the close handler for this circle to close button
+      document.getElementById('mut_close_button').onclick = this.closeHandler.bind(this);
+
+      //Trigger open events on all children where they exist
+      for (let i = 0; i < this.items.length; i++) {
+        this.items[i].open && this.items[i].open();
+      }
+    });
   }
 
+  /**
+    * Close handler for the circle
+  */ 
   closeHandler() {
-
+ 
+    //Replace open class with closing class
     this.base.classList.replace(style.mut_circle_open, style.mut_circle_closing);
 
-    setTimeout(function () {
-      this.base.classList.replace(style.mut_circle_closing, this.anim);
-    }.bind(this), 300);
+    requestAnimationFrame(() => {
 
-    window.setTimeout(function () {
-      this.base.classList.addMultiple(style.mut_circle_closed);
-      document.body.classList.removeMultiple(this.color, style.mut_body_close_shown, style.mut_body_light);
-    }.bind(this), 1);
+      //Add fred class (intermediary)
+      this.base.classList.add(style.mut_circle_fred);
 
+      requestAnimationFrame(() => {
+
+        //Add closed class to circle
+        this.base.classList.add(style.mut_circle_closed);
+
+        //Hide close button and change header color back
+        document.body.classList.removeMultiple(style.mut_body_close_shown, style.mut_body_light);
+      });
+
+    });
+
+    //Trigger close events on all children that have it
     for (let i = 0; i < this.items.length; i++) {
-      this.items[i].open && this.items[i].close();
+      this.items[i].close && this.items[i].close();
     }
   }
 
+  /**
+    * Build the circle with the top and left coordinates
+    * @param {Number} left - the left position (in pixels) for the circle 
+    * @param {Number} top - the top position (in pixels) for the circle 
+  */ 
   build(left, top) {
 
     this.top = top;
     this.left = left;
     this.anim = anims.shift();
 
-    this.base.classList.add(this.anim);
     this.base.style.top = `${this.top}px`;
     this.base.style.left = `${this.left}px`;
     this.base.addEventListener('click', this.baseClick);
 
-    window.setTimeout(function () {
-      this.base.classList.add(style.mut_circle_ready);
-    }.bind(this), 25);
+    //Show circle
+    requestAnimationFrame(() => {
+      this.base.classList.add(style.mut_circle_closed);
+
+      //Add animation class
+      setTimeout(() => {
+        this.base.classList.add(this.anim)
+      }, 100)
+    });
 
   }
 
+  /**
+    * CDM function, add event listeners and get children with 'mut_item' class
+  */ 
   componentDidMount() {
-    this.base.setLocation = this.setLocation;
     this.base.build = this.build;
     this.base.addEventListener('click', this.clickHandler);
     this.items = this.base.querySelectorAll('.mut_item');
   }
 
+  /**
+    * Render function, accepts props containing color and children
+  */ 
   render({ color, children }) {
 
     this.color = color;
 
     return (
-      <div class={`${style.mut_circle} ${style.mut_circle_closed} ${color}`}>
+      <div class={`${style.mut_circle} ${color}`}>
         {children}
       </div>
     );

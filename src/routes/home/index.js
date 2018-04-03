@@ -8,7 +8,8 @@ import Title from '../../components/title';
 import Line from  '../../components/line';
 import Sphere from '../../components/sphere';
 
-export default class Home extends Component {
+/** Class for home route */
+class Home extends Component {
 
 	constructor() {
 		super();
@@ -16,6 +17,9 @@ export default class Home extends Component {
 		this.circles = [];
 	}
 
+	/**
+    * CDM function, determines circle radius, calculates random positions of circles, triggers circle build
+  */
 	componentDidMount() {
 
 		const width = this.base.offsetWidth;
@@ -52,6 +56,11 @@ export default class Home extends Component {
 		}
 	}
 
+	/**
+    * Get random number between 0 and maxium with no duplicates
+    * @param {Number[]} items - currently selected numbers, to prevent duplicates
+    * @param {Number} maximum - the largest number the random can be
+  */
 	getRandom(items, maximum) {
 		const random = this.getRandomWithin(0, maximum);
 
@@ -62,11 +71,18 @@ export default class Home extends Component {
 		return random;
 	}
 
+	/**
+    * Get random number within min and max
+    * @param {Number} min - The lowest number the random can be
+    * @param {Number} max - the highest number the random can be
+  */
   getRandomWithin(min, max) {
     return Math.floor(min + Math.random()*(max+1 - min))
   }
 
-
+	/**
+    * Render function
+  */
 	render() {
 
 		return (
@@ -139,11 +155,15 @@ export default class Home extends Component {
 				</Circle>
 				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
 					<Title size='big'>Hi, I'm Tyler</Title>
+					<img class={`${style.mut_image_list}`} src='/assets/tyler.jpg' />
 				</Circle>
 				<div class={style.mut_footer}>
 					<span>&copy; Tyler Mutch {(new Date()).getFullYear()}</span>
-					<a href='https://preactjs.com/'>built with preact</a></div>
+					<a href='https://preactjs.com/'>built with preact</a>
 				</div>
-			);
-		}
+			</div>
+		);
 	}
+}
+
+export default Home;

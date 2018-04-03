@@ -94,7 +94,6 @@ class Circle extends Component {
 
     this.base.style.top = `${this.top}px`;
     this.base.style.left = `${this.left}px`;
-    this.base.addEventListener('click', this.baseClick);
 
     //Show circle
     requestAnimationFrame(() => {

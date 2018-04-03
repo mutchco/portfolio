@@ -178,7 +178,7 @@ class Home extends Component {
 					</div>
 				</Circle>
 				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
-					<Title size='big'>Hi, I'm Tyler</Title>
+					<Title size='big'>Hi, Iʼm Tyler</Title>
 					<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
 					<p>
 						I was born in Vancouver in 1990, Iʼve lived all over Western Canada and spent a few years in New Zealand.

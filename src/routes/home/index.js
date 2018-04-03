@@ -159,8 +159,8 @@ class Home extends Component {
 						<div class={`${style.mut_row} ${style.mut_row_thin}`}>
 							<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
 							<p>
-								HQ Mini is Android piece of the GPS Police puzzle, it's allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
-								used MapBox for it's map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
+								HQ Mini is Android piece of the GPS Police puzzle, it allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
+								used MapBox for itʼs map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
 								had permission. It used REST apis and JWT authentication for backend communication.
 							</p>
 						</div>
@@ -181,7 +181,7 @@ class Home extends Component {
 					<Title size='big'>Hi, I'm Tyler</Title>
 					<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
 					<p>
-						I was born in Vancouver in 1990, I've lived all over Western Canada and spent a few years in New Zealand.
+						I was born in Vancouver in 1990, Iʼve lived all over Western Canada and spent a few years in New Zealand.
 					</p>
 					<form onSubmit={this.emailSubmit}>
 						<h4>Send me an email</h4>

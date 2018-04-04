@@ -101,10 +101,10 @@ class Home extends Component {
 						<Title size='small' delay='0.4s'> 2012-2015 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/actionmatrix.png' />
 						<p>
-							My first forray into enterprise software was with a piece of inventory control, routing and customer relations management software. It was built under my company 
-							"MutchCo Developments" and targeted at the construction and waste management sector. It proved to reduce fuel costs with it's unique routing system that relied on 
-							an algorithm built to try and solve the travelling salesperson problem. It used NFC and RFID tags to provide rigid inventory control which was routed through custom 
-							hardware, to an Android phone and back to the server side in real-time. It had three major version releases over three years and is still in use today.
+							My first foray into enterprise software was with a piece of inventory control, routing and customer relations management software. It was built under my company 
+							"MutchCo Developments" and targeted at the construction and waste management sector. It was proven to reduce fuel costs with its unique routing system that relied on 
+							an algorithm built to try and solve the travelling salesperson problem. It used NFC and RFID tags to provide a rigid inventory control which was routed through custom 
+							hardware to an Android phone and back to the server side in real-time. It had three major version releases over three years and is still in use today.
 						</p>
 					</div>
 					<Sphere num={4} style-class={content.mut_acm_sphere} />
@@ -118,10 +118,10 @@ class Home extends Component {
 						<p>
 							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence 
 							on advertising while also providing key insights about the audience. During my tenure with Farcast I wrote some of my favorite code of my career. This included a 
-							recommendation service that used a four-dimensional graph and postgis spatial queries to provide the user with fast, rich recommendations based on their and other's 
-							listening habits. It was also my first time building a JWT based authentication system that had to communicate with multiple different clients, including the Android 
-							app that I had a huge hand in deisgning and building. Our design language was simple, monochrome and straight forward giving way to the art of the podcaster while also 
-							making clear minimalist statement.
+							recommendation service that used a four-dimensional graph and PostGIS spatial queries to provide the user with fast, rich recommendations based on their and other's 
+							listening habits. It was also my first time building a JWT-based authentication system that had to communicate with multiple different clients, including the Android 
+							app that I had a huge hand in designing and building. Our design language was simple, monochrome and straight-forward, giving way to the podcast's album art while also 
+							making a clear minimalist statement.
 						</p>
 					</div>
 					<div class={`${content.mut_linebox} ${content.mut_far_linebox}`}>
@@ -142,10 +142,10 @@ class Home extends Component {
 						<Title size='small' delay='0.4s'> 2015-2016 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/paywallz.png' />
 						<p>		
-					  	Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup, from magazines to webinars we faced a huge number 
+					  	Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup, from magazines to webinars. We faced a huge number of
 					  	challenges while building this platform in an agile, rapid cycle. The most arduous of these challenges was building the external JavaScript widget that was loaded onto the 
 					  	publisher's website, this was solved with vanilla JavaScript, AWS CloudFront and a lot of CORS testing. I was also responsible for building the backend API/service that
-					  	handled the payments for all subscriptions by communicating with our payment processor Stripe. Lastly I also provisioned and maintained the AWS infrastructure and 
+					  	handled the payments for all subscriptions by communicating with our payment processor Stripe. Lastly, I also provisioned and maintained the AWS infrastructure and 
 					  	CI/CD (Jenkins, CircleCI) for the entire platform.
 						</p>
 					</div>
@@ -219,9 +219,9 @@ class Home extends Component {
 							I was born in Vancouver in 1990 which is where I started to develop my design aesthetic influenced by Canadian West Coast styles and forms. In my early 20's I spent 4 years 
 							living in New Zeland and traveled throughout Japan and Peru which had a lasting impact on the way I approach web design. I pride myself on my minimalist, muted, succinct 
 							designs and straight-forward user experiences. Iʼm self-taught in JavaScript, C#, golang and Java and continue to thrive in the fast paced nature of each ecosystem. I'm a capable 
-							software developer with 7 years experience in the industry which beganin 2011 with working as an analyst in Calgary AB, from there I started my own company and 
-							saw it through until 2016 when I moved back to Calgary. Since moving back I've worked for atartups and freelanced during which I've continued to hone my design skills. 
-							The collective problems we face in the industry (and my morning coffee) are what get me up in the morning and the anticipation of solving these makes me excited for the 
+							software developer with 7 years experience in the industry which began in 2011 while working as an analyst in Calgary AB, from there I started my own company and 
+							saw it through until 2016 when I moved back to Calgary. Since moving back I've worked for atartups and freelanced, during which time I've continued to hone my design skills. 
+							The collective problems we face in the industry (and my morning coffee) are what get me up in the morning, and the anticipation of solving these same problems makes me excited for the 
 							future.
 						</p>
 					</div>

@@ -164,10 +164,9 @@ class Home extends Component {
 							<div class={`${style.mut_row}`}>
 								<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
 								<p>
-									My biggest dilemna in web design is always intuitive navigation, I find modern navigation to often
-									be clunky and encumbered. I decided that for my portfolio website I would make the duality of navigation and discovery front and center, instead of traditional navigation 
-									paradigms. Each bubble represents a significant part of my career, they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
-									discover the content. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
+									My biggest dilemna in web design is always intuitive navigation: I find modern navigation styles too often come across as
+									clunky and cumbersome. As opposed to these traditional navigation paradigms, I decided that my portfolio website would highlight the duality of navigation and discovery. Each bubble represents a significant part of my career: they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
+									discover the content beneath. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
 								</p>
 							</div>
 							<Line style-class={content.mut_other_line} size={24} />
@@ -177,9 +176,9 @@ class Home extends Component {
 								<img class={`${style.mut_list_image}`} src='/assets/finwall.png' />
 								<p>
 									Fin-Wall Site Services is a local, family owned company that has been thriving in Southern Alberta for over 25 years. For the design of this website I took inspiration 
-									from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of what the company stands for. 
-									For the design of the logo, I kept it simple and came up with a 2D rendition of the companies patented wall support technology, something the founding family remained proud of 
-									through the whole lifetime of the company.
+									from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of the company's values. 
+									I kept the design of the logo simple and came up with a 2D rendition of the company's patented wall-support technology, something the founding family has remained proud of 
+									throughout the lifetime of the company.
 								</p>
 							</div>
 							<Line style-class={content.mut_other_line} size={24} />
@@ -189,9 +188,9 @@ class Home extends Component {
 								<img class={`${style.mut_list_image}`} src='/assets/hqmini.png' />
 								<img class={`${style.mut_list_image}`} src='/assets/hqmini2.png' />
 								<p>
-									HQ Mini is Android piece of the GPS Police puzzle, it allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
+									HQ Mini is the Android piece of the GPS Police puzzle, it allows companies to monitor their fleet of vehicles from anywhere in the world on almost any Android device. This app 
 									used MapBox for itʼs map rendering and provided data points such as current speed and location of the vehicle as well as total engine hours in real-time to whomever in the company 
-									had permission. It used REST apis and JWT authentication for backend communication.
+									had permission. It used REST APIs and JWT authentication for backend communication.
 								</p>
 							</div>
 							<Line style-class={content.mut_other_line} size={24} />
@@ -201,8 +200,8 @@ class Home extends Component {
 								<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion.png' />
 								<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion2.png' />
 								<p>
-									Kurrent Motion is a hula hoop company that I had as a client during my tenure in New Zealand, I managed their branding, logo design and print media. I created this poster and 
-									brochure to be used in cafes and ad boards. They feature simple design and imagery that focus on the nature of the client. I used playful and elegant typefaces that 
+									Kurrent Motion is a hula hoop company I had as a client during my time in New Zealand. I managed their branding, logo design and print media. This poster and 
+									brochure were created to be used in cafes and on ad boards. They feature a simple design and imagery that focuses on the active nature of the client. I used playful and elegant typefaces that 
 									have the same character as the circus roots the client was founded in.
 								</p>
 							</div>

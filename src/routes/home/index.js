@@ -164,8 +164,9 @@ class Home extends Component {
 							<div class={`${style.mut_row}`}>
 								<img class={`${style.mut_list_image}`} src='/assets/mutchco.png' />
 								<p>
-									My biggest dilemna in web design is always intuitive navigation: I find modern navigation styles too often come across as
-									clunky and cumbersome. As opposed to these traditional navigation paradigms, I decided that my portfolio website would highlight the duality of navigation and discovery. Each bubble represents a significant part of my career: they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
+									My biggest dilemna in web design has always been intuitive navigation: I find modern navigation styles too often come across as
+									clunky and cumbersome. Instead of shying away from this problem, I decided that my portfolio website would highlight the duality of navigation and discovery. 
+									Each bubble represents a significant part of my career: they beg the user for interaction and only via curiosity (or maybe frustration) will the user 
 									discover the content beneath. The pastel colors and gentle animations are inspired by my love of minimalism and muted palletes.
 								</p>
 							</div>
@@ -178,7 +179,7 @@ class Home extends Component {
 									Fin-Wall Site Services is a local, family owned company that has been thriving in Southern Alberta for over 25 years. For the design of this website I took inspiration 
 									from the landscape and the era in which the company was founded. I used retro graphic design and strong typefaces that give the user a sense of the company's values. 
 									I kept the design of the logo simple and came up with a 2D rendition of the company's patented wall-support technology, something the founding family has remained proud of 
-									throughout the lifetime of the company.
+									throughout their lifetime.
 								</p>
 							</div>
 							<Line style-class={content.mut_other_line} size={24} />
@@ -201,8 +202,8 @@ class Home extends Component {
 								<img class={`${style.mut_list_image}`} src='/assets/kurrentmotion2.png' />
 								<p>
 									Kurrent Motion is a hula hoop company I had as a client during my time in New Zealand. I managed their branding, logo design and print media. This poster and 
-									brochure were created to be used in cafes and on ad boards. They feature a simple design and imagery that focuses on the active nature of the client. I used playful and elegant typefaces that 
-									have the same character as the circus roots the client was founded in.
+									brochure were created to be used in cafes and on ad boards, they feature a simple design and imagery that focuses on the active nature of the client's work. I used playful 
+									and elegant typefaces that have the same character as the circus roots the client emerged from.
 								</p>
 							</div>
 						</div>
@@ -215,7 +216,13 @@ class Home extends Component {
 						<Title size='med'>(tyler@mutch.co)</Title>
 						<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
 						<p>
-							I was born in Vancouver in 1990, Iʼve lived all over Western Canada and spent a few years in New Zealand.
+							I was born in Vancouver in 1990 which is where I started to develop my design aesthetic influenced by Canadian West Coast styles and forms. In my early 20's I spent 4 years 
+							living in New Zeland and traveled throughout Japan and Peru which had a lasting impact on the way I approach web design. I pride myself on my minimalist, muted, succinct 
+							designs and straight-forward user experiences. Iʼm self-taught in JavaScript, C#, golang and Java and continue to thrive in the fast paced nature of each ecosystem. I'm a capable 
+							software developer with 7 years experience in the industry which beganin 2011 with working as an analyst in Calgary AB, from there I started my own company and 
+							saw it through until 2016 when I moved back to Calgary. Since moving back I've worked for atartups and freelanced during which I've continued to hone my design skills. 
+							The collective problems we face in the industry (and my morning coffee) are what get me up in the morning and the anticipation of solving these makes me excited for the 
+							future.
 						</p>
 					</div>
 					<div class={`${content.mut_linebox} ${content.mut_about_linebox}`}>

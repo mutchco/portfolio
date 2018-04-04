@@ -6,7 +6,9 @@ class Line extends Component {
 
   render(props) {
 
-    return (<div class={`${styles.mut_line} ${props['style-class']}`} style={`height: ${props.size}px`}></div>)
+  	const styleClass = props['style-class'] || '';
+
+    return (<div class={`${styles.mut_line} ${styleClass}`} style={`height: ${props.size}px`}></div>)
 
   }
 

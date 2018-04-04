@@ -80,6 +80,13 @@ class Home extends Component {
     return Math.floor(min + Math.random()*(max+1 - min))
   }
 
+  	/**
+    * Send email to myself
+  */
+  sendEmail() {
+
+  }
+
 	/**
     * Render function
   */
@@ -112,7 +119,7 @@ class Home extends Component {
 				      on building out the Android portion of their platform while also managing the development of several key backend services such as authentication, messaging and media recommendations.
 						</p>
 					</div>
-					<div class={content.mut_far_linebox}>
+					<div class={`${content.mut_linebox} ${content.mut_far_linebox}`}>
 						<Line size={24} />
 						<Line size={24} />
 						<Line size={24} />
@@ -134,7 +141,7 @@ class Home extends Component {
 					    the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
 						</p>
 					</div>
-					<Sphere num={3} style-class={content.mut_pay_sphere} />
+					<Sphere num={4} style-class={content.mut_pay_sphere} />
 				</Circle>
 				<Circle color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
@@ -196,17 +203,24 @@ class Home extends Component {
 					</div>
 				</Circle>
 				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
-					<Title size='big'>Hi, Iʼm Tyler</Title>
-					<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
-					<p>
-						I was born in Vancouver in 1990, Iʼve lived all over Western Canada and spent a few years in New Zealand.
-					</p>
-					<form onSubmit={this.emailSubmit}>
-						<h4>Send me an email</h4>
-						<input type='text' name='email' />
-						<input type='text' name='name' />
-						<textarea name='comment'></textarea>
-					</form>
+					<div class={style.mut_content_wrapper}>
+						<Title href='mailto:tyler@mutch.co' size='big'>Hi, Iʼm Tyler</Title>
+						<Title size='med'>(tyler@mutch.co)</Title>
+						<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
+						<p>
+							I was born in Vancouver in 1990, Iʼve lived all over Western Canada and spent a few years in New Zealand.
+						</p>
+					</div>
+					<div class={`${content.mut_linebox} ${content.mut_about_linebox}`}>
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+					</div>
 				</Circle>
 				<div class={style.mut_footer}>
 					<a href='https://github.com/mutchco/portfolio' target='_blank'>&copy; Tyler Mutch {(new Date()).getFullYear()}</a>

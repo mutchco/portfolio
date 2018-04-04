@@ -48,6 +48,11 @@ class Circle extends Component {
       for (let i = 0; i < this.items.length; i++) {
         this.items[i].open && this.items[i].open();
       }
+
+      gtag('event', 'navigation', {
+        'event_category' : 'bubble-open',
+        'event_label' : this.color
+      });
     });
   }
 

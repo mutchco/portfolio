@@ -101,22 +101,27 @@ class Home extends Component {
 						<Title size='small' delay='0.4s'> 2012-2015 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/actionmatrix.png' />
 						<p>
-							Action Matrix is the third iteration of an inventory control, routing and customer relations management software. It's targeted at the construction and waste management industry and has proven to reduce fuel costs by up to 25% through it's unique
-				      routing system. The user-centric web app and accompanying Android app provide real-time information specific to the client, it uses a combination of NFC and RFID tags to identify inventory. It includes custom built hardware that relays information
-				      from scales and RFID readers to the Android app.
+							My first forray into enterprise software was with a piece of inventory control, routing and customer relations management software. It was built under my company 
+							"MutchCo Developments" and targeted at the construction and waste management sector. It proved to reduce fuel costs with it's unique routing system that relied on 
+							an algorithm built to try and solve the travelling salesperson problem. It used NFC and RFID tags to provide rigid inventory control which was routed through custom 
+							hardware, to an Android phone and back to the server side in real-time. It had three major version releases over three years and is still in use today.
 						</p>
 					</div>
 					<Sphere num={4} style-class={content.mut_acm_sphere} />
 				</Circle>
 				<Circle color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
-						<Title size='big' delay='0s'> Farcast </Title>
+						<Title href='https://www.farcast.com' size='big' delay='0s'> Farcast </Title>
 						<Title size='med' delay='0.2s'> Android/node.js/react </Title>
 						<Title size='small' delay='0.4s'> 2015-2016 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/farcast.png' />
 						<p>
-							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence on advertising while also providing key insights about the audience. With Farcast I focused
-				      on building out the Android portion of their platform while also managing the development of several key backend services such as authentication, messaging and media recommendations.
+							Farcast is a new podcasting platform that focuses on both the podcaster and the listener. It uses a subscription-based monetization model that reduces the dependence 
+							on advertising while also providing key insights about the audience. During my tenure with Farcast I wrote some of my favorite code of my career. This included a 
+							recommendation service that used a four-dimensional graph and postgis spatial queries to provide the user with fast, rich recommendations based on their and other's 
+							listening habits. It was also my first time building a JWT based authentication system that had to communicate with multiple different clients, including the Android 
+							app that I had a huge hand in deisgning and building. Our design language was simple, monochrome and straight forward giving way to the art of the podcaster while also 
+							making clear minimalist statement.
 						</p>
 					</div>
 					<div class={`${content.mut_linebox} ${content.mut_far_linebox}`}>
@@ -137,8 +142,11 @@ class Home extends Component {
 						<Title size='small' delay='0.4s'> 2015-2016 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/paywallz.png' />
 						<p>		
-					  	Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup. With Paywallz I was responsible for building the payemnt processing service as well as the external JavaScript that is loaded onto
-					    the publishers website in order to block specific content. I also managed all AWS infrastructure and CI/CD for the entire platform.
+					  	Paywallz is a SaaS based paywall that allows publishers to monetize a multitude of different content with minimal setup, from magazines to webinars we faced a huge number 
+					  	challenges while building this platform in an agile, rapid cycle. The most arduous of these challenges was building the external JavaScript widget that was loaded onto the 
+					  	publisher's website, this was solved with vanilla JavaScript, AWS CloudFront and a lot of CORS testing. I was also responsible for building the backend API/service that
+					  	handled the payments for all subscriptions by communicating with our payment processor Stripe. Lastly I also provisioned and maintained the AWS infrastructure and 
+					  	CI/CD (Jenkins, CircleCI) for the entire platform.
 						</p>
 					</div>
 					<Sphere num={4} style-class={content.mut_pay_sphere} />

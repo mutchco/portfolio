@@ -28,8 +28,13 @@ class Circle extends Component {
       //Replace closed class with open class
       this.base.classList.replace(style.mut_circle_closed, style.mut_circle_opening);
 
-      //Show the close button and change header font
-      document.body.classList.addMultiple(style.mut_body_close_shown, style.mut_body_light);
+      //Show the close button and change header font if circle is light
+      if (this.light === true) {
+        document.body.classList.add(style.mut_body_light);
+      }
+
+      document.body.classList.add(style.mut_body_close_shown);
+
 
       requestAnimationFrame(() => {
         //Replace opening class with frank class (intermediary)
@@ -51,7 +56,7 @@ class Circle extends Component {
 
       gtag('event', 'navigation', {
         'event_category' : 'bubble-open',
-        'event_label' : this.color
+        'event_label' : this.name
       });
     });
   }
@@ -76,7 +81,11 @@ class Circle extends Component {
         this.base.classList.removeMultiple(style.mut_circle_closing, style.mut_circle_fred);
 
         //Hide close button and change header color back
-        document.body.classList.removeMultiple(style.mut_body_close_shown, style.mut_body_light);
+        if (this.light === true) {
+          document.body.classList.remove(style.mut_body_light);
+        }
+        
+        document.body.classList.remove(style.mut_body_close_shown);
       });
 
     });
@@ -125,12 +134,16 @@ class Circle extends Component {
   /**
     * Render function, accepts props containing color and children
   */ 
-  render({ color, children }) {
+  render({ name, light, color, children }) {
 
+    this.name = name;
+    this.light = light;
     this.color = color;
 
+    const styleClass = `${style.mut_circle} ${color}` + (this.light === false ? ' ' + style.mut_circle_light : '');
+
     return (
-      <div class={`${style.mut_circle} ${color}`}>
+      <div class={styleClass}>
         {children}
       </div>
     );

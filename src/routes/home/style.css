@@ -37,6 +37,10 @@
   width: 100%;
 }
 
+.mut_content_fix {
+	transform: translate3d(0, 0, 0);
+}
+
 .mut_list_image {
 	width: auto !important;
 	max-width: calc(100% - 32px) !important;

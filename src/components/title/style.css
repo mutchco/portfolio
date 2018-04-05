@@ -16,7 +16,7 @@
   left: 0;
   transform: translateY(100%);
   font-family: 'Inconsolata', monospace;
-  color: #f7f1e3 !important;
+  color: #f7f1e3;
 }
 
 .mut_title_ready span, .mut_title_ready a {

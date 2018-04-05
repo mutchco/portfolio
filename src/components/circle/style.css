@@ -60,6 +60,13 @@
 	margin: 8px 32px;
 }
 
+.mut_circle_light,
+.mut_circle_light a,
+.mut_circle_light p,
+.mut_circle_light span {
+	color: #84817a !important;
+}
+
 .mut_circle_open img {
 	opacity: 1;
 	transition: opacity 0.3s ease-in;

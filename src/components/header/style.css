@@ -41,3 +41,14 @@
 .mut_header svg:hover {
 	opacity: 0.7;
 }
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.mut_header h1 {
+		font-size: 28px;
+	}
+
+	.mut_header h2 {
+		font-size: 14px;
+	}	
+}

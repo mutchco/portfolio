@@ -94,7 +94,8 @@ class Home extends Component {
 
 		return (
 			<div class={style.mut_svg_container}>
-				<Circle color={style.mut_circle_color_1} ref={c => this.circles.push(c)}>
+				<Circle name='ActionMatrix' light={true} color={style.mut_circle_color_1} ref={c => this.circles.push(c)}>
+					<Sphere num={4} style-class={content.mut_acm_sphere} />
 					<div class={style.mut_content_wrapper}>
 						<Title size='big' delay='0s'> Action Matrix </Title>
 						<Title size='med' delay='0.2s'> Angular/.NET/NHibernate </Title>
@@ -107,9 +108,18 @@ class Home extends Component {
 							hardware to an Android phone and back to the server side in real-time. It had three major version releases over three years and is still in use today.
 						</p>
 					</div>
-					<Sphere num={4} style-class={content.mut_acm_sphere} />
 				</Circle>
-				<Circle color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
+				<Circle name='Farcast' light={true} color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
+					<div class={`${content.mut_linebox} ${content.mut_far_linebox}`}>
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+						<Line size={24} />
+					</div>
 					<div class={style.mut_content_wrapper}>
 						<Title href='https://www.farcast.com' size='big' delay='0s'> Farcast </Title>
 						<Title size='med' delay='0.2s'> Android/node.js/react </Title>
@@ -124,18 +134,9 @@ class Home extends Component {
 							making a clear minimalist statement.
 						</p>
 					</div>
-					<div class={`${content.mut_linebox} ${content.mut_far_linebox}`}>
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-					</div>
 				</Circle>
-				<Circle color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
+				<Circle name='Paywallz' light={true} color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
+					<Sphere num={4} style-class={content.mut_pay_sphere} />
 					<div class={style.mut_content_wrapper}>
 						<Title href='https://www.paywallz.com' size='big' delay='0s'> Paywallz </Title>
 						<Title size='med' delay='0.2s'> node.js/javascript/stripe.js </Title>
@@ -149,9 +150,8 @@ class Home extends Component {
 					  	CI/CD (Jenkins, CircleCI) for the entire platform.
 						</p>
 					</div>
-					<Sphere num={4} style-class={content.mut_pay_sphere} />
 				</Circle>
-				<Circle color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
+				<Circle name='Other' light={true} color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
 					<div class={style.mut_content_wrapper}>
 
 						<Title size='big' delay='0s'> Other Work </Title>
@@ -210,30 +210,20 @@ class Home extends Component {
 
 					</div>
 				</Circle>
-				<Circle color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
-					<div class={style.mut_content_wrapper}>
-						<Title href='mailto:tyler@mutch.co' size='big'>Hi, Iʼm Tyler</Title>
+				<Circle name='ActionMatrix' light={false} color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
+					<div class={`${style.mut_content_wrapper} ${style.mut_content_fix}`}>
+						<Title href='mailto:tyler@mutch.co?subject=I had a question' size='big'>Hi, Iʼm Tyler</Title>
 						<Title size='med'>(tyler@mutch.co)</Title>
 						<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
 						<p>
 							I was born in Vancouver in 1990 which is where I started to develop my design aesthetic influenced by Canadian West Coast styles and forms. In my early 20ʼs I spent 4 years 
-							living in New Zeland and traveled throughout Japan and Peru which had a lasting impact on the way I approach web design. I pride myself on my minimalist, muted, succinct 
+							living in New Zealand and traveled throughout Japan and Peru which had a lasting impact on the way I approach web design. I pride myself on my minimalist, muted, succinct 
 							designs and straight-forward user experiences. Iʼm self-taught in JavaScript, C#, golang and Java and continue to thrive in the fast paced nature of each ecosystem. Iʼm a capable 
 							software developer with 7 years experience in the industry which began in 2011 while working as an analyst in Calgary AB, from there I started my own company and 
-							saw it through until 2016 when I moved back to Calgary. Since moving back Iʼve worked for atartups and freelanced, during which time Iʼve continued to hone my design skills. 
+							saw it through until 2016 when I moved back to Calgary. Since moving back Iʼve worked for startups and freelanced, during which time Iʼve continued to hone my design skills. 
 							The collective problems we face in the industry (and my morning coffee) are what get me up in the morning, and the anticipation of solving these same problems makes me excited for the 
 							future.
 						</p>
-					</div>
-					<div class={`${content.mut_linebox} ${content.mut_about_linebox}`}>
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
-						<Line size={24} />
 					</div>
 				</Circle>
 				<div class={style.mut_footer}>

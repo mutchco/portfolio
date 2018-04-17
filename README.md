@@ -1,4 +1,7 @@
-# Tyler Mutch portfolio website
+# Tyler Mutch Portfolio Website
+
+A static SPA built with [preact](https://github.com/developit/preact) that showcases the work done by me (Tyler Mutch), it uses zero dependencies other than preact and preact router.
+It uses AWS Api Gateway and AWS Lambda to send lead generation emails and Google Analytics for user engagement tracking
 
 ## CLI Commands
 

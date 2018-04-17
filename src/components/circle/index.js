@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 
 import style from './style';
 
-/** @constant {Array[] anims Animation classes*/
+/** @constant {Array[]} anims - Animation css classes*/
 const anims = Object.keys(style).map(e => style[e]).filter(item => (item.indexOf('anim') > 0));
 
 /** Class representing a floating circle  */

@@ -1,41 +1,76 @@
-## Classes
+## 
 
-<dl>
-<dt><a href="#App">App</a></dt>
-<dd><p>Class representing the entire app</p>
-</dd>
-<dt><a href="#Circle">Circle</a></dt>
-<dd><p>Class representing a floating circle</p>
-</dd>
-<dt><a href="#EmailModal">EmailModal</a></dt>
-<dd><p>Class representing the email form modal</p>
-</dd>
-<dt><a href="#Header">Header</a></dt>
-<dd><p>Class representing the header</p>
-</dd>
-<dt><a href="#Line">Line</a></dt>
-<dd><p>Class representing an animated line</p>
-</dd>
-<dt><a href="#Ripple">Ripple</a></dt>
-<dd><p>Class representing a touch-feedback ripple</p>
-</dd>
-<dt><a href="#Sphere">Sphere</a></dt>
-<dd><p>Class representing a set of animated spheres</p>
-</dd>
-<dt><a href="#Title">Title</a></dt>
-<dd><p>Class representing an animated title</p>
-</dd>
-<dt><a href="#Home">Home</a></dt>
-<dd><p>Class for home route</p>
-</dd>
-</dl>
+<table>
+  <thead>
+    <tr>
+      <th>Global</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td><a href="#App">App</a></td>
+    <td><p>Class representing the entire app</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Circle">Circle</a></td>
+    <td><p>Class representing a floating circle</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#EmailModal">EmailModal</a></td>
+    <td><p>Class representing the email form modal</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Header">Header</a></td>
+    <td><p>Class representing the header</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Line">Line</a></td>
+    <td><p>Class representing an animated line</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Ripple">Ripple</a></td>
+    <td><p>Class representing a touch-feedback ripple</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Sphere">Sphere</a></td>
+    <td><p>Class representing a set of animated spheres</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Title">Title</a></td>
+    <td><p>Class representing an animated title</p>
+</td>
+    </tr>
+<tr>
+    <td><a href="#Home">Home</a></td>
+    <td><p>Class for home route</p>
+</td>
+    </tr>
+</tbody>
+</table>
 
-## Constants
+## 
 
-<dl>
-<dt><a href="#{Array[">{Array[</a></dt>
-<dd></dd>
-</dl>
+<table>
+  <thead>
+    <tr>
+      <th>Global</th><th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+    <td><a href="#anims">anims</a> : <code>Array.&lt;Array&gt;</code></td>
+    <td><p>Animation css classes</p>
+</td>
+    </tr>
+</tbody>
+</table>
 
 <a name="App"></a>
 
@@ -310,7 +345,9 @@ Get random number within min and max
 Render function
 
 **Kind**: instance method of [<code>Home</code>](#Home)  
-<a name="{Array["></a>
+<a name="anims"></a>
 
-## {Array[
+## anims : <code>Array.&lt;Array&gt;</code>
+Animation css classes
+
 **Kind**: global constant  

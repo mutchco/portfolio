@@ -1,0 +1,191 @@
+@import "../../style/vars";
+
+$offset: 187;
+$duration: 1.4s;
+
+.mut_overlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $lightColorOpacity;
+	z-index: 50;
+	transform: scale(0);
+	opacity: 0;
+	transition: opacity 0.3s ease-in;
+	transform-origin: center bottom;
+}
+
+.mut_overlay_open {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.mut_email_modal {
+	width: 100%;
+	max-width: 400px;
+	max-height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	background: $lightColor;
+	box-shadow: $elevation2;
+	border-radius: 3px;
+	transform: scale(0);
+	transform-origin: center bottom;
+	transition: transform 0.3s ease-in;
+	font-family: $viewFont;
+	color: $darkColor;
+
+	h3, input, textarea {
+		margin: 0 0 8px 0;
+		color: inherit;
+		font-family: inherit;
+	}
+
+	input, textarea, button {
+		border: none;
+		outline: none !important;
+	}
+
+	h3 {
+		font-size: 2em;
+	}
+
+	p {
+		font-size: 12px;
+		margin: 0;
+		color: $redColor;
+	}
+
+	p:last-of-type {
+		color: $greenColor;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;	
+		padding: 16px;
+	}
+
+	label {
+		font-size: 14px;
+		margin: 8px 0 4px 0;
+	}
+
+	input {
+		padding: 0 0 2px 0;
+	}
+
+	textarea {
+		resize: none;
+	}
+
+	input, textarea {
+		border-bottom: 2px solid $darkColor;
+		background: none;
+	}
+
+	button {
+		height: 40px;
+		margin: 16px 0;
+		padding: 0 32px;
+		border-radius: 8px;
+		font-family: $viewFont;
+		font-size: 1.1em;
+		color: $darkColor !important;
+		box-shadow: $elevation1;
+		background: $lightColor;
+		transition: box-shadow 0.2s ease-in;
+	}
+
+	button:hover {
+		box-shadow: $elevation2;
+	}
+
+	button:disabled {
+		opacity: 0.5;
+	}
+
+	button + p, button + p + p {
+		font-size: 16px;
+		text-align: center;
+	}
+
+	circle {
+	  stroke-dasharray: $offset;
+	  stroke-dashoffset: 0;
+	  transform-origin: center;
+	  animation:
+	    dash $duration ease-in-out infinite, 
+	    colors ($duration*4) ease-in-out infinite;
+	}
+
+	/* Change the white to any color ;) */
+	input:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 30px $lightColor inset;
+	}
+}
+
+.mut_email_modal_open {
+	transform: scale(1);
+}
+
+.mut_overlay_close {
+	width: 40px;
+	height: 40px;
+	position: absolute !important;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	align-items: center;
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	div {
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	svg {
+		fill: $darkColor;
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+}
+
+.mut_spinner {
+	align-self: center;
+  animation: rotator $duration linear infinite;
+  margin: 16px 0;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+@keyframes colors {
+	0% { stroke: $blueColor; }
+	25% { stroke: $greenColor; }
+	50% { stroke: $yellowColor; }
+	75% { stroke: $orangeColor; }
+  100% { stroke: $redColor; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}

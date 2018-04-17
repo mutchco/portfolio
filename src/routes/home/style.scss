@@ -1,3 +1,5 @@
+@import "../../style/vars";
+
 .mut_svg_container {
 	width: calc(100% - 64px);
 	height: calc(100% - 207px);
@@ -14,10 +16,28 @@
 	position: absolute;
 	z-index: 11 !important;
 	overflow-y: scroll;
+
+	button {
+		height: 40px;
+		margin: 16px 0 16px 32px;
+		padding: 0 32px;
+		border-radius: 8px;
+		font-family: $viewFont;
+		font-size: 1.1em;
+		color: $darkColor;
+		box-shadow: $elevation1;
+		border: none;
+		outline: none !important;
+		transition: box-shadow 0.2s ease-in;
+	}
+
+	button:hover {
+		box-shadow: $elevation2;
+	}
 }
 
 .mut_content_wrapper::-webkit-scrollbar {
-    width: 4px;
+	width: 4px;
 	background: rgba(0, 0, 0, 0);
 }
 
@@ -26,8 +46,8 @@
 }
 
 .mut_content_wrapper::-webkit-scrollbar-thumb {
-    width: 8px;
-	background: rgba(255, 255, 255, 0.3);
+	width: 8px;
+	background: rgba(0, 0, 0, 0.3);
 }
 
 .mut_content_wrapper:after {
@@ -74,6 +94,10 @@
 	.mut_list_image {
 		max-height: 168px;
 	}
+	
+	.mut_content_wrapper {
+		padding: 16px;
+	}
 }
 
 .mut_footer {
@@ -85,43 +109,66 @@
 	left:0;
 	padding: 8px;
 	font-size: 12px;
-	color: #84817a;
-	font-family: 'Inconsolata', monospace;
+	color: $darkColor;
+	font-family: $viewFont;
 	z-index: 0;
-}
 
-.mut_footer a,
-.mut_footer a:visited,
-.mut_footer a:hover {
-	color: #84817a;
+	a, a:visited, a:hover {
+		color: $darkColor;
+	}
 }
 
 
 /* Blue */
 .mut_circle_color_1 {
-	background: #778beb;
-}
+	background: $blueColor;
 
-.mut_circle_color_1 .mut_sphere {
-	background: #778beb;
+	.mut_sphere, button {
+		background: $blueColor;
+	}
 }
 
 /*Teal*/
 .mut_circle_color_2 {
-	background: #63cdda;
+	background: $tealColor;
+
+	button {
+		background: $tealColor;
+	}
+}
+
+/*Green*/
+.mut_circle_color_6 {
+	background: $greenColor;
+
+	button {
+		background: $greenColor;
+	}
 }
 
 /*Yellow*/
 .mut_circle_color_3 {
-	background: #f7d794;
+	background: $yellowColor;
+
+	button {
+		background: $yellowColor;
+	}
 }
 
 /*Orange*/
 .mut_circle_color_4 {
-	background: #f3a683;
+	background: $orangeColor;
+
+	button {
+		background: $orangeColor;
+	}
 }
 
 /*Red*/
 .mut_circle_color_5 {
-	background: #ea8685;
+	background: $redColor;
+
+	button {
+		background: $redColor;
+	}
 }

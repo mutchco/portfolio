@@ -2,23 +2,29 @@ import { h, Component } from 'preact';
 
 import style from './style';
 
+/** Class representing an animated title */
 class Title extends Component {
 
-  open() {
+  /**
+    * Brings the title content into view
+  */ 
+  open = () => {
     window.setTimeout(function () {
       this.container.classList.add(style.mut_title_ready);
     }.bind(this), 300);
-  }
+  };
 
-  close() {
+  /**
+    * Hides the content from view
+  */ 
+  close = () => {
     this.container.classList.remove(style.mut_title_ready);
-  }
+  };
 
-  componentDidMount() {
-    this.base.open = this.open.bind(this);
-    this.base.close = this.close.bind(this);
-  }
-
+  /**
+    * Render method, sets font-size, animation delay and sets content as
+    * an anchor tag based on href prop
+  */ 
   render({ size, delay, href, children }) {
 
     let content;

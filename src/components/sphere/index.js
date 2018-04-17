@@ -2,8 +2,13 @@ import { h, Component } from 'preact';
 
 import styles from './style';
 
+/** Class representing a set of animated spheres */
 class Sphere extends Component {
 
+  /**
+    * Render method, adds style class and renders number of spheres
+    * based on num prop, calculates size and postion of speheres
+  */ 
   render(props) {
 
     const num = props.num;

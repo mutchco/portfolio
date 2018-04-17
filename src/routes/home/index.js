@@ -7,6 +7,8 @@ import Circle from '../../components/circle';
 import Title from '../../components/title';
 import Line from  '../../components/line';
 import Sphere from '../../components/sphere';
+import EmailModal from '../../components/email-modal';
+import Ripple from '../../components/ripple';
 
 /** Class for home route */
 class Home extends Component {
@@ -17,21 +19,60 @@ class Home extends Component {
 		this.circles = [];
 	}
 
+  /**
+    * Handles window resize, rebuilding the circle graph
+  */ 
+	onResize = () => {
+		this.buildCircleGraph();
+	};
+
+  /**
+    * Handles modal open
+  */ 
+	onModalOpen = () => {
+		this.setState({ modal: true });
+	};
+
+  /**
+    * Handles modal close
+    * @param {Event} event - The touch/click event
+  */ 
+	onModalClose = event => {
+		if (['mut_overlay', 'mut_overlay_close', 'mut_overlay_close_svg', 'mut_overlay_close_path'].indexOf(event.target.id) >= 0) {
+			this.setState({ modal: false });
+		}
+	};
+
 	/**
-    * CDM function, determines circle radius, calculates random positions of circles, triggers circle build
+    * CDM function, calls graph build and adds resize listener
   */
 	componentDidMount() {
+		this.buildCircleGraph();
+		window.addEventListener('resize', this.onResize);
+	}
 
-		const width = this.base.offsetWidth;
+	/**
+    * CWU function, removes resize listener
+  */
+  componentWillUnmount() {
+  	window.removeEventListener('resize', this.onResize);
+  }
+
+  /**
+    * Determines circle radius, calculates random positions of circles, triggers circle build
+  */
+	buildCircleGraph() {
+  	const width = this.base.offsetWidth;
 		const height = this.base.offsetHeight;
+		const _height = window.innerHeight;
 
 		let circleRadius;
 
-		if (width <= 480) {
+		if (width <= 480 || _height <= 480) {
 			circleRadius = 28;
-		} else if (width <= 768) {
+		} else if (width <= 768 || _height <= 768) {
 			circleRadius = 32;
-		} else if (width <= 1200) {
+		} else if (width <= 1200 || _height <= 1200) {
 			circleRadius = 48;
 		} else {
 			circleRadius = 52;
@@ -54,7 +95,7 @@ class Home extends Component {
 			items.push(random)
 			this.circles[i].build(left, top);
 		}
-	}
+  }
 
 	/**
     * Get random number between 0 and maxium with no duplicates
@@ -80,17 +121,10 @@ class Home extends Component {
     return Math.floor(min + Math.random()*(max+1 - min))
   }
 
-  	/**
-    * Send email to myself
-  */
-  sendEmail() {
-
-  }
-
 	/**
     * Render function
   */
-	render() {
+	render({}, { modal }) {
 
 		return (
 			<div class={style.mut_svg_container}>
@@ -107,6 +141,10 @@ class Home extends Component {
 							an algorithm built to try and solve the travelling salesperson problem. It used NFC and RFID tags to provide a rigid inventory control which was routed through custom 
 							hardware to an Android phone and back to the server side in real-time. It had three major version releases over three years and is still in use today.
 						</p>
+						<button type='button' onClick={this.onModalOpen}>
+							<Ripple />
+							Get ahold of me
+						</button>
 					</div>
 				</Circle>
 				<Circle name='Farcast' light={true} color={style.mut_circle_color_5} ref={c => this.circles.push(c)}>
@@ -133,6 +171,10 @@ class Home extends Component {
 							app that I had a huge hand in designing and building. Our design language was simple, monochrome and straight-forward, giving way to the podcastʼs album art while also 
 							making a clear minimalist statement.
 						</p>
+						<button type='button' onClick={this.onModalOpen}>
+							<Ripple />
+							Drop me a line
+						</button>
 					</div>
 				</Circle>
 				<Circle name='Paywallz' light={true} color={style.mut_circle_color_2} ref={c => this.circles.push(c)}>
@@ -149,6 +191,10 @@ class Home extends Component {
 					  	handled the payments for all subscriptions by communicating with our payment processor Stripe. Lastly, I also provisioned and maintained the AWS infrastructure and 
 					  	CI/CD (Jenkins, CircleCI) for the entire platform.
 						</p>
+						<button type='button' onClick={this.onModalOpen}>
+							<Ripple />
+							Shoot me a message
+						</button>
 					</div>
 				</Circle>
 				<Circle name='Other' light={true} color={style.mut_circle_color_4} ref={c => this.circles.push(c)}>
@@ -212,8 +258,7 @@ class Home extends Component {
 				</Circle>
 				<Circle name='ActionMatrix' light={false} color={style.mut_circle_color_3} ref={c => this.circles.push(c)}>
 					<div class={`${style.mut_content_wrapper} ${style.mut_content_fix}`}>
-						<Title href='mailto:tyler@mutch.co?subject=I had a question' size='big'>Hi, Iʼm Tyler</Title>
-						<Title size='med'>(tyler@mutch.co)</Title>
+						<Title size='big' delay='0s'>Hi, Iʼm Tyler</Title>
 						<img class={`${style.mut_list_image}`} src='/assets/tyler.jpg' />
 						<p>
 							I was born in Vancouver in 1990 which is where I started to develop my design aesthetic influenced by Canadian West Coast styles and forms. In my early 20ʼs I spent 4 years 
@@ -224,12 +269,30 @@ class Home extends Component {
 							The collective problems we face in the industry (and my morning coffee) are what get me up in the morning, and the anticipation of solving these same problems makes me excited for the 
 							future.
 						</p>
+						<button type='button' onClick={this.onModalOpen}>
+							<Ripple />
+							Send me an email
+						</button>
+					</div>
+				</Circle>
+				<Circle name='Oireas' light={false} color={style.mut_circle_color_6} ref={c => this.circles.push(c)}>
+					<div class={style.mut_content_wrapper}>
+						<Title href='https://www.oireas.com' size='big' delay='0s'> Oireas.com </Title>
+						<Title size='med' delay='0.2s'> preact/AWS Lambda </Title>
+						<Title size='small' delay='0.4s'> 2018 </Title>
+						<img class={`${style.mut_circle_image} mut_item`} src='/assets/oireas.png' />
+						<p></p>
+						<button type='button' onClick={this.onModalOpen}>
+							<Ripple />
+							Get in touch
+						</button>
 					</div>
 				</Circle>
 				<div class={style.mut_footer}>
 					<a href='https://github.com/mutchco/portfolio' target='_blank'>&copy; Tyler Mutch {(new Date()).getFullYear()}</a>
 					<a href='https://preactjs.com/' target='_blank'>built with preact</a>
 				</div>
+				<EmailModal open={modal} onClose={this.onModalClose} />
 			</div>
 		);
 	}

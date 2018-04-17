@@ -1,13 +1,30 @@
+@import "../../style/vars";
+
 .mut_circle {
 	width: 104px;
 	height: 104px;
 	position: absolute;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: $elevation2;
 	z-index: 1;
 	cursor: pointer;
 	border-radius: 50%;
 	transform: scale(0); 
 	overflow: hidden;
+
+	img {
+		width: 	calc(100% - 64px);
+		max-width: 1024px;
+		opacity: 0;
+		margin: 16px 32px;
+	}
+
+	p {	
+		color: $lightColor;
+		opacity: 0;
+		font-family: $viewFont;
+		font-size: 20px;
+		margin: 8px 32px;
+	}
 }
 
 .mut_circle_opening *,
@@ -18,16 +35,14 @@
 	pointer-events: none;
 }
 
-.mut_circle_open *,
-.mut_circle_opening *,
-.mut_circle_frank * {
-	transition: opacity 0.3s linear;
-}
-
 .mut_circle_opening,
 .mut_circle_frank,
 .mut_circle_open {
 	z-index: 10;
+
+	* {
+		transition: opacity 0.3s linear;
+	}
 }
 
 .mut_circle_opening {
@@ -45,39 +60,10 @@
 	transform: scale(30) !important;
 }
 
-.mut_circle img {
-	width: 	calc(100% - 64px);
-	max-width: 1024px;
-	opacity: 0;
-	margin: 16px 32px;
-}
-
-.mut_circle p {	
-	color: #f7f1e3;
-	opacity: 0;
-	font-family: 'Inconsolata', monospace;
-	font-size: 20px;
-	margin: 8px 32px;
-}
-
-.mut_circle_light,
-.mut_circle_light a,
-.mut_circle_light p,
-.mut_circle_light span {
-	color: #84817a !important;
-}
-
-.mut_circle_open img {
-	opacity: 1;
-	transition: opacity 0.3s ease-in;
-	transition-delay: 0.4s;
-  	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.mut_circle_open p {
-	opacity: 1;
-	transition: opacity 0.3s ease-in;
-	transition-delay: 0.4s;
+.mut_circle_light {
+	a, p, span {
+		color: $darkColor !important;
+	}
 }
 
 .mut_circle_anim_1 {
@@ -100,8 +86,12 @@
 	animation: circle5 4s infinite ease-out forwards;
 }
 
+.mut_circle_anim_6 {
+	animation: circle6 6s infinite ease-out forwards;
+}
+
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
+@media only screen and (max-width : 1200px), (max-height: 1200px) {
 	.mut_circle {
 		width: 96px;
 		height: 96px;
@@ -115,7 +105,7 @@
 }
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width : 768px), (max-height: 768px) {
 	.mut_circle {
 		width: 64px;
 		height: 64px;
@@ -136,7 +126,7 @@
 }
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
+@media only screen and (max-width : 480px), (max-width: 480px) {
 	.mut_circle {
 			width: 56px;
 			height: 56px;
@@ -145,6 +135,10 @@
 	.mut_circle_opening {
 		top: calc(50% - 56px);
 		left: calc(50% - 56px);
+	}
+
+	.mut_circle img {
+		width: 	calc(100% - 32px);
 	}
 }
 
@@ -159,6 +153,19 @@
 	border-radius: 0;
 	box-shadow: none;
 	padding: 160px 32px 32px 32px;
+
+	img {
+		opacity: 1;
+		transition: opacity 0.3s ease-in;
+		transition-delay: 0.4s;
+	  box-shadow: $elevation2;
+	}
+
+	p {
+		opacity: 1;
+		transition: opacity 0.3s ease-in;
+		transition-delay: 0.4s;
+	}
 }
 
 .mut_circle_closing {
@@ -180,13 +187,19 @@
 	transform: scale(1);
 }
 
-.mut_body_light h1,
-.mut_body_light h2 {
-	color: #f7f1e3 !important;
-}
+.mut_body_light {
 
-.mut_body_light svg {
-	fill: #f7f1e3;
+	h1, h2 {
+		color: $lightColor !important;
+	}
+
+	button {
+		color: $lightColor;
+	}
+
+	svg {
+		fill: $lightColor;
+	}
 }
 
 .mut_body_close_shown svg {
@@ -292,6 +305,27 @@
 	}
 	80% {
 		transform: translate(-6px, 5px);
+	}
+	100% {
+		transform: translate(0px, 0px);
+	}
+}
+
+@keyframes circle6 {
+	0% {
+		transform: translate(0px, 0px);
+	}
+	20% {
+		transform: translate(4px, -2px);
+	}
+	40% {
+		transform: translate(-2px, -6px);
+	}
+	60% {
+		transform: translate(-7px, -1px);
+	}
+	80% {
+		transform: translate(-3px, 4px);
 	}
 	100% {
 		transform: translate(0px, 0px);

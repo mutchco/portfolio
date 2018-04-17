@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Source+Code+Pro:700');
+@import "vars";
 
 html, body {
 	height: 100%;
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background: #f7f1e3;
+	background: $lightColor;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

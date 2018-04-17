@@ -2,8 +2,12 @@ import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style';
 
+/** Class representing the header */
 class Header extends Component {
 
+	/**
+    * Render method, basic header
+  */ 
 	render() {
 
 		return (

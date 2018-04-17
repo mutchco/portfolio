@@ -116,10 +116,11 @@ Close handler for the circle
 Build the circle with the top and left coordinates
 
 **Kind**: instance method of [<code>Circle</code>](#Circle)  
-**Params**
 
-- left <code>Number</code> - the left position (in pixels) for the circle
-- top <code>Number</code> - the top position (in pixels) for the circle
+| Param | Type | Description |
+| --- | --- | --- |
+| left | <code>Number</code> | the left position (in pixels) for the circle |
+| top | <code>Number</code> | the top position (in pixels) for the circle |
 
 <a name="Circle+componentDidMount"></a>
 
@@ -295,9 +296,10 @@ Handles modal open
 Handles modal close
 
 **Kind**: instance property of [<code>Home</code>](#Home)  
-**Params**
 
-- event <code>Event</code> - The touch/click event
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>Event</code> | The touch/click event |
 
 <a name="Home+componentDidMount"></a>
 
@@ -323,10 +325,11 @@ Determines circle radius, calculates random positions of circles, triggers circl
 Get random number between 0 and maxium with no duplicates
 
 **Kind**: instance method of [<code>Home</code>](#Home)  
-**Params**
 
-- items <code>Array.&lt;Number&gt;</code> - currently selected numbers, to prevent duplicates
-- maximum <code>Number</code> - the largest number the random can be
+| Param | Type | Description |
+| --- | --- | --- |
+| items | <code>Array.&lt;Number&gt;</code> | currently selected numbers, to prevent duplicates |
+| maximum | <code>Number</code> | the largest number the random can be |
 
 <a name="Home+getRandomWithin"></a>
 
@@ -334,10 +337,11 @@ Get random number between 0 and maxium with no duplicates
 Get random number within min and max
 
 **Kind**: instance method of [<code>Home</code>](#Home)  
-**Params**
 
-- min <code>Number</code> - The lowest number the random can be
-- max <code>Number</code> - the highest number the random can be
+| Param | Type | Description |
+| --- | --- | --- |
+| min | <code>Number</code> | The lowest number the random can be |
+| max | <code>Number</code> | the highest number the random can be |
 
 <a name="Home+render"></a>
 

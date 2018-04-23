@@ -81,7 +81,7 @@ class Home extends Component {
 		const desiredCell = circleRadius * 2.5;
 		const columns = Math.floor(width / desiredCell);
 		const rows = Math.floor(height / desiredCell);
-		const maximum = columns * rows - rows;
+		const maximum = columns * rows - columns;
 
 		let items = [];
 		for (let i = 0; i < this.circles.length; i++) {
@@ -276,12 +276,20 @@ class Home extends Component {
 					</div>
 				</Circle>
 				<Circle name='Oireas' light={false} color={style.mut_circle_color_6} ref={c => this.circles.push(c)}>
+					<Sphere num={4} style-class={content.mut_oir_sphere} />
 					<div class={style.mut_content_wrapper}>
 						<Title href='https://www.oireas.com' size='big' delay='0s'> Oireas.com </Title>
 						<Title size='med' delay='0.2s'> preact/AWS Lambda </Title>
 						<Title size='small' delay='0.4s'> 2018 </Title>
 						<img class={`${style.mut_circle_image} mut_item`} src='/assets/oireas.png' />
-						<p></p>
+						<p>
+							Oireas.com is an Irish language website dedicated to keeping the gaelic language alive among current generations. During conception, my research of typical Irish themed
+							websites turned up what I expected, orange and green, celtic knots and handwritten typefaces. I decided my design had to strike a balance between paying homage to
+							these traditional design languages and modernizing them. I, of course, kept the green but updated it with the candy-floss version shown in the background
+							above. I used a modern version of a handwritten typeface for the accent font, but chose a simple, straight-forward sans-serif for the rest. I took inspiration from the 
+							first letter of the name and created a circular focal point that draws the eye in, which reflects common themes among celtic imagery. The website focuses on enticing the user
+							into learning through gamification and simplicity while also presenting an easy, frictionless call-to-action.
+						</p>
 						<button type='button' onClick={this.onModalOpen}>
 							<Ripple />
 							Get in touch

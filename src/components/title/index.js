@@ -9,23 +9,31 @@ class Title extends Component {
     * Brings the title content into view
   */ 
   open = () => {
-    window.setTimeout(function () {
-      this.container.classList.add(style.mut_title_ready);
-    }.bind(this), 300);
+    window.setTimeout(() => {
+      this.setState({ open: true });
+    }, 300);
   };
 
   /**
     * Hides the content from view
   */ 
   close = () => {
-    this.container.classList.remove(style.mut_title_ready);
+    this.setState({ open: false });
   };
 
   /**
+    * CDM method, adds open and close methods to base element
+  */
+  componentDidMount() {
+    this.base.open = this.open;
+    this.base.close = this.close;
+  }
+
+  /**
     * Render method, sets font-size, animation delay and sets content as
-    * an anchor tag based on href prop
+    * an anchor tag or span based on href prop
   */ 
-  render({ size, delay, href, children }) {
+  render({ size, delay, href, children }, { open }) {
 
     let content;
     let classes = [style.mut_title, 'mut_item'];
@@ -51,9 +59,12 @@ class Title extends Component {
       content = (<span ref={s => this.span = s}>{children}</span>);
     }
 
+    if (open === true) {
+      classes.push(style.mut_title_ready);
+    }
 
     return (
-      <div class={classes.join(' ')} ref={c => this.container = c} style={`transition-delay: ${delay}`}>
+      <div class={classes.join(' ')} style={`transition-delay: ${delay}`}>
         {children}
         {content}
       </div>

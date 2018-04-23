@@ -62,11 +62,11 @@ class EmailModal extends Component {
 			return this.setState({ errors, loading: false });
 		}
 
-		fetch('https://app.mutch.co/email/test', {
+		fetch('https://app.mutch.co/email/mutchco', {
 			body: JSON.stringify(values),
 	    headers: {
 	      'content-type': 'application/json',
-	      'x-api-key': 'ciGrtLhwt78NKXweHQgNM2F5A9VbgEXm7aZIppt1'
+	      'x-api-key': 't7YJ7reWp76YtyOQMClz03YJa70raMC178LMg6Ze'
 	    },
 	    credentials: 'include',
 	    method: 'POST'

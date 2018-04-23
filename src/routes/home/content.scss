@@ -8,6 +8,10 @@
   left: 0;
   transform: translateY(50%) rotate(180deg);
   z-index: 0 !important;
+
+  .mut_sphere {
+    background: $blueColor;
+  }
 }
 
 .mut_linebox {
@@ -88,6 +92,20 @@
 .mut_other_line {
   margin: 32px 16px;
   animation: otherline 4s infinite ease-in-out alternate;
+}
+
+.mut_oir_sphere {
+  height: calc(100vh - 160px);
+  width: calc(100vh - 160px);
+  position: absolute;
+  top: 160px;
+  left: 0;
+  transform: translateX(-50%) rotate(-90deg);
+  z-index: 0;
+
+  .mut_sphere {
+    background: $greenColor;
+  }
 }
 
 @keyframes line {

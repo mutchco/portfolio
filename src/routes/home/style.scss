@@ -97,6 +97,11 @@
 	
 	.mut_content_wrapper {
 		padding: 16px;
+
+		button {
+			height: 40px;
+			margin: 16px 0 16px 16px;
+		}
 	}
 }
 
@@ -123,7 +128,7 @@
 .mut_circle_color_1 {
 	background: $blueColor;
 
-	.mut_sphere, button {
+	button {
 		background: $blueColor;
 	}
 }
